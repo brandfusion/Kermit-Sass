@@ -1,0 +1,11 @@
+.pager a {
+	background-color: $white;
+	border-color:$baseBorderColor;
+}
+.pager a:hover {
+	background-color:$baseBorderColor;
+}
+.pager .disabled a,
+.pager .disabled a:hover {
+	background-color: $white;
+}

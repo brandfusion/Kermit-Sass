@@ -1,0 +1,143 @@
+.e-ecom-grid {
+
+}
+.e-ecom-grid ul{
+	margin:0;
+	padding:0;
+	list-style:none;
+	@include clearfix();
+}
+.e-ecom-grid ul li {
+	width: 25%;
+	height:210px;
+	text-align:center;
+	float: left;
+	overflow:hidden;
+	padding:$baseLineHeight / 1.5 $gridGutterWidth / 1.5 $baseLineHeight / 2;
+    margin: 0 0 -1px 0;
+	line-height: 1.15;
+    border-width: 0 1px 1px 0;
+	border-color: $baseBorderColor;
+    border-style: solid;
+	@include box-sizing(border-box);
+}
+.e-ecom-grid ul li:hover {
+	@include box-shadow(inset 2px 2px 2px -1px rgba($linkColor,.99),inset -2px -2px 2px -1px rgba($linkColor,.99));
+}
+/* all containers */
+@media (min-width: 980px){
+	.e-ecom-grid ul li{
+	}
+	.e-ecom-grid ul li:nth-child(4n) {
+		border-right-width: 0;
+	}
+}
+@media (min-width: 769px) and (max-width: 979px){
+	.e-ecom-grid ul li{
+		height:220px;
+		width: 33.33%;
+	}
+	.e-ecom-grid ul li:nth-child(3n){
+		border-right-width: 0;
+	}
+}
+@media (min-width: 640px) and (max-width: 768px){
+	.e-ecom-grid ul li{
+		width: 25%;
+	}
+	.e-ecom-grid ul li:nth-child(4n){
+		border-right-width: 0;
+	}
+}
+@media (min-width: 481px) and (max-width: 640px){
+	.e-ecom-grid ul li{
+		height:220px;
+		width: 33.33%;
+	}
+	.e-ecom-grid ul li:nth-child(3n){
+		border-right-width: 0;
+	}
+}
+@media (min-width: 320px) and (max-width: 480px){
+	.e-ecom-grid ul li{
+		height:230px;
+		width: 50%;
+	}
+	.e-ecom-grid ul li:nth-child(2n){
+		border-right-width: 0;
+	}
+}
+@media (max-width: 319px){
+	.e-ecom-grid ul li{
+		width: 100%;
+		height: auto;
+		border-right-width: 0;
+	}
+}
+/* all containers - end */
+/* small containers: span3 - span1 and span2 not applicable */
+@media (min-width: 768px){
+	.span3 > .e-ecom-grid ul li{
+		width: 100%;
+		height: auto;
+		border-right-width: 0; 
+	}
+}
+/* small containers - end */
+/* large containers: span12 */
+@media (min-width: 981px){
+	.span12 > .e-ecom-grid ul li{
+		width: 20%;
+		height: 220px;
+		border-right-width: 1px; 
+	}
+	.span12 > .e-ecom-grid ul li:nth-child(5n) {
+		border-right-width: 0;
+	}
+}
+@media (min-width: 769px) and (max-width: 980px){
+	.span12 > .e-ecom-grid ul li{
+		width: 25%;
+		height: 210px;
+		border-right-width: 1px; 
+	}
+	.span12 > .e-ecom-grid ul li:nth-child(4n) {
+		border-right-width: 0;
+	}
+}
+/* large containers - end */
+
+.e-ecom-grid ul li h1,
+.e-ecom-grid ul li h2,
+.e-ecom-grid ul li h3,
+.e-ecom-grid ul li h4{
+	font-weight: $eFontWeightNormal;
+	margin-top: $baseLineHeight / 4;
+	margin-bottom: 0;
+}
+.e-ecom-grid ul li p{
+	font-size: ceil($baseFontSize * 0.846);
+	line-height: 1.2;
+	margin-top: ceil($baseLineHeight / 4) !important;
+}
+.e-ecom-grid ul li .e-price{
+	color: inherit;
+	display: block;
+	margin: $baseLineHeight / 5 0 0;
+}
+//use uncle dave's old padded box to create intrinsic ratio on image containers preventing them from jumping around if images have f´different heights
+.e-ecom-grid ul li > a > div{
+	position: relative;
+	padding-bottom: 75%;
+}
+.e-ecom-grid ul li > a > div > img{
+	position: absolute;
+	top: 0;
+	left: auto;
+	right: auto;
+	display: block;
+	margin: 0 auto;
+    width: auto;
+	max-width: 100%;
+	max-height: 100%;
+}

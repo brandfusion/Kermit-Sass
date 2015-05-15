@@ -1,0 +1,13 @@
+p .label {
+	font-size: .846em;
+	margin-right: 0.25em;
+	padding: 0.075em 0.25em 0.125em;
+}
+
+// CVI brand color 
+.label-branded, .badge-branded{ 
+	background-color: $brandColor;
+}
+.label-branded[href], .badge-branded[href] { 
+	background-color: darken($brandColor, 10%); 
+}

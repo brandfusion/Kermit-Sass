@@ -1,0 +1,8 @@
+.e-content {
+	background-color: $contentBackgroundColor;
+}
+@media (max-width: 767px) {
+	.e-content > .row:last-child {
+		margin-bottom:0; 
+	}
+}

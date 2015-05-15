@@ -1,0 +1,38 @@
+.breadcrumb { 
+	font-size:$baseFontSize - 3px;
+	line-height:1;
+	padding:0;
+	margin:0.675em 0 0.846em;
+	background:none;
+	@include border-radius(0);
+}
+.breadcrumb li{ 
+	color:lighten($textColorMuted, 30%);
+	margin: 0;
+}
+.breadcrumb li a{
+	color:lighten($textColorMuted, 10%);
+}
+.breadcrumb li .divider{
+	color:lighten($textColorMuted, 35%);
+	padding:0 0.25em;
+}
+.breadcrumb li:first-child{ 
+	padding-right:0.375em;
+}
+.breadcrumb li .btn{
+	margin-top:-1px;
+	color: $textColor;
+}
+.breadcrumb li:last-child a,
+.breadcrumb li:last-child a:hover{ 
+	text-decoration:none;
+	cursor:text;
+	pointer-events:none;
+}
+@media (max-width: 767px) {
+	.breadcrumb { 
+		white-space:nowrap;
+		overflow:hidden;
+	}
+}

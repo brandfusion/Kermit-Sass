@@ -1,0 +1,161 @@
+body{padding-bottom:$baseLineHeight * 2; }
+.e-wrapper{
+	margin-left:auto;
+	margin-right:auto;
+	width: ($gridColumnWidth * $gridColumns) + ($gridGutterWidth * ($gridColumns - 1)) + ($gridGutterWidth * 2);
+}
+.container[class*="e-"] {
+	padding-left:$gridGutterWidth; 
+	padding-right:$gridGutterWidth;
+}
+@media (max-width: 767px) {
+	body {
+		padding:0;
+		background:$contentBackgroundColor !important;
+	}
+	body > [class*="e-"] > .container{
+		padding-left:$eResponsiveBodyPadding; 
+		padding-right:$eResponsiveBodyPadding;
+	}
+	body > .e-wrapper{
+		width:100%;
+		padding-left:0; 
+		padding-right:0;
+		@include box-shadow(none !important);
+	}
+	body > .e-wrapper > [class*="e-"] > .container{
+		padding-left:$eResponsiveBodyPadding;
+		padding-right:$eResponsiveBodyPadding;
+	}
+
+}
+/* Responsive
+-------------------------------------------------- */
+@media (min-width: 768px) and (max-width: 979px) {
+	.e-wrapper{
+		width: ($gridColumnWidth768 * $gridColumns) + ($gridGutterWidth768 * ($gridColumns - 1)) + ($gridGutterWidth * 2);
+	}
+}
+@media (min-width: 1240px) {
+	.e-wrapper{
+		width: ($gridColumnWidth * 12) + ($gridGutterWidth * (12 - 1)) + ($gridGutterWidth * 3 * 2);
+	}
+	.container[class*="e-"] {
+		padding-left:$gridGutterWidth * 3; 
+		padding-right:$gridGutterWidth * 3;
+	}
+}
+@media (min-width: 1320px) {
+	.e-wrapper{
+		width: ($gridColumnWidth * 12) + ($gridGutterWidth * (12 - 1)) + ($gridGutterWidth * 4 * 2);
+	}
+	.container[class*="e-"] {
+		padding-left:$gridGutterWidth * 4;
+		padding-right:$gridGutterWidth * 4;
+	}
+}
+@media (min-width: 1640px) {
+	.e-wrapper{
+		width: ($gridColumnWidth * 12) + ($gridGutterWidth * (12 - 1)) + ($gridGutterWidth * 5 * 2);
+	}
+	.container[class*="e-"] {
+		padding-left:$gridGutterWidth * 5;
+		padding-right:$gridGutterWidth * 5;
+	}
+}
+
+/* Sørg for at Left Right afsnit ikke stacker for tidligt */
+@media (min-width: 480px) and (max-width: 767px) {
+	.e-donotstack,
+	.row-fluid .e-donotstack{
+		float:left;
+	}
+	.e-donotstack + .e-donotstack{
+		margin-left: $fluidGridGutterWidth;
+	}
+	.e-donotstack.pull-right{
+		margin-left: $fluidGridGutterWidth;
+	}
+	.e-donotstack.pull-right + .e-donotstack{
+		margin-left: 0;
+	}
+	.span1.e-donotstack{
+		@include grid-fluid-span(1, $fluidGridColumnWidth, $fluidGridGutterWidth)
+	}
+	.span2.e-donotstack{
+		@include grid-fluid-span(2, $fluidGridColumnWidth, $fluidGridGutterWidth)
+	}
+	.span3.e-donotstack{
+		@include grid-fluid-span(3, $fluidGridColumnWidth, $fluidGridGutterWidth)
+	}
+	.span4.e-donotstack{
+		@include grid-fluid-span(4, $fluidGridColumnWidth, $fluidGridGutterWidth)
+	}
+	.span5.e-donotstack{
+		@include grid-fluid-span(5, $fluidGridColumnWidth, $fluidGridGutterWidth)
+	}
+	.span6.e-donotstack{
+		@include grid-fluid-span(6, $fluidGridColumnWidth, $fluidGridGutterWidth)
+	}
+	.span7.e-donotstack{
+		@include grid-fluid-span(7, $fluidGridColumnWidth, $fluidGridGutterWidth)
+	}
+	.span8.e-donotstack{
+		@include grid-fluid-span(8, $fluidGridColumnWidth, $fluidGridGutterWidth)
+	}
+	.span9.e-donotstack{
+		@include grid-fluid-span(9, $fluidGridColumnWidth, $fluidGridGutterWidth)
+	}
+	.span10.e-donotstack{
+		@include grid-fluid-span(10, $fluidGridColumnWidth, $fluidGridGutterWidth)
+	}
+	.span11.e-donotstack{
+		@include grid-fluid-span(11, $fluidGridColumnWidth, $fluidGridGutterWidth)
+	}
+	.span12.e-donotstack{
+		@include grid-fluid-span(12, $fluidGridColumnWidth, $fluidGridGutterWidth)
+	}
+	.row > .e-donotstack[class*="span"] > a.e-img > img{
+		max-width: 100%;
+	}
+}
+@media (max-width: 767px) {
+	// Make all grid-sized elements block level again
+	[class*="span"],
+	.row-fluid [class*="span"] {
+		margin-bottom: $baseLineHeight;
+	}
+	//Fjern overskydende whitespace efter rows og hr når de stacker
+	hr{margin:0;}
+	.row + hr{margin-top:-$baseLineHeight;}
+	hr + .row{margin-top:$baseLineHeight;}
+
+	//Tilføj extra whitespace under billeder i left/right afsnit når de stacker
+	.row > [class*="span"] > .e-img{margin-bottom: $baseLineHeight / 2;}
+	
+	//Fordel bredde efter bedste evne når viewporten bliver mindre
+	.row > .span1 > a.e-img > img,
+	.row > .span2 > a.e-img > img{
+		max-width: 33%;
+	}
+	.row > .span3 > a.e-img > img,
+	.row > .span4 > a.e-img > img{
+		max-width: 45%;
+	}
+	.row > .span5 > a.e-img > img,
+	.row > .span6 > a.e-img > img{
+		max-width: 66%;
+	}
+	.row > .span7 > a.e-img > img,
+	.row > .span8 > a.e-img > img{
+		max-width: 75%;
+	}
+	.row > .span9 > a.e-img > img,
+	.row > .span10 > a.e-img > img{
+		max-width: 90%;
+	}
+	.row > [class*="span"] > a.e-img > img.large,
+	.row > [class*="span"] > a.e-img > img.mega{
+		max-width: 100%;
+	}
+}

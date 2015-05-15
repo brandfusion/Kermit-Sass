@@ -1,0 +1,270 @@
+.claim-header {
+	h1 {
+		text-transform: uppercase;
+	  border-bottom: 1px solid #13ac46;
+	  background-color: #fff;
+	  padding: 10px 0px 10px 0px;
+	  color: #000;
+	  font-size: 14px;
+	  font-weight: 600;
+	  margin: 0px;
+	}
+	h2 {
+		font-size: 20px;
+	  font-weight: 400;
+	  margin: 0px;
+	  line-height: 30px;
+	  font-size: 14px;
+	}
+}
+.step-icon {
+	display: inline-block;
+  /* padding: 30px; */
+  width: 80px;
+  height: 80px;
+  background-color: #fafafa;
+  color: #fff;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 100px;
+  font-size: 30px;
+  font-weight: 300;
+  padding-top: 19px;
+  border: 1px solid #eee;
+  margin: 0 auto;
+  color: $color-green-primary;
+}
+.step-icon.active {
+  	background-color: $color-green-light;
+  	color: #fff;
+  	border-color: $color-green-primary;
+}
+.claim-option-list {
+	padding-top: 20px;
+}
+.step-header {
+	text-align: center;
+	ul {
+		display: inline-block;
+		li {
+			width: 200px;
+			float: left;
+			position: relative;
+			&:after {
+				font-family: "FontAwesome";
+				content: "\f105";
+				color: $color-green-light;
+			  position: absolute;
+			  right: 0;
+			  top: 22px;
+			  font-size: 30px;
+			}
+		}
+		li:last-child {
+			&:after {
+				content: "";
+			}
+		}	
+		p {
+			display: block;
+			margin:0px;
+		}
+	}
+}
+.claim-main-content {
+	padding: 20px 0px;
+	max-width: 860px;
+	margin: 0 auto;
+	label {
+		line-height: 32px;
+		font-weight: 400;
+	}
+	.fa-info-circle {
+		margin-right: 5px;
+	}
+
+}
+.claim-submit-row {
+	margin-bottom: 20px;
+	.claim-previous {
+		float: left;
+	}
+	.claim-submit {
+		float: right;
+	}
+}
+.claim-headline {
+	font-weight: 300;
+  border-bottom: 1px dotted $color-green-light;
+  line-height: 32px;
+  font-size: 18px;
+  color: #000;    
+  font-weight: 600;
+  font-size: 14px;
+}
+.upload-content {
+	padding-left: 0px;
+	padding-top: 20px;
+	.photo-added {
+		display: inline-block;
+	  border: 1px solid #999;
+	  padding: 10px;
+	  margin-bottom: 10px;
+	  input {
+	  	display: inline-block;
+	  }
+	  .photo-name {
+	  	margin-right: 10px;
+	  	display: inline-block;
+	  	margin-bottom: 0px;
+	  }
+	  .delete-photo {
+	  	display: inline-block;	  	
+	  	color: red;
+	  	background-color: #fff;
+	  	border: none;
+	  	outline: none;	  	
+	  }
+
+	}
+}
+.claim-main-content {
+	textarea {
+		max-width: 100%;
+	}
+	.alert-text {
+		line-height: 1.4;
+		margin-bottom: 10px;
+		text-align: left;
+	}
+	p.important {
+		font-weight: 600;
+  	text-decoration: underline;
+	}
+	.vendor-info {
+		border: 1px solid #000;
+		padding: 10px;
+		background-color: #fafafa;
+		box-shadow: 0px 0px 3px #aaa;
+		margin-bottom: 20px;
+		p {
+			margin-bottom: 5px;
+		}
+		ul {
+			padding: 0px;
+			margin: 0px;
+			li {
+				float: left;
+				width: 25%;
+			}
+		}
+		.claim-vendor, .claim-ship-week {
+			color: $red;
+			font-weight: 700;
+		}
+		.order-info-week {
+			 line-height: 48px;
+		  font-size: 20px;
+		  text-transform: uppercase;
+		  font-weight: 300;
+		  span {
+		  	font-weight: 600;
+		  }
+		}
+	}
+
+}
+.start-preliminary-claim {
+	color: #000;
+	text-decoration: underline;
+}
+
+.claim-table  {
+	table {
+		table-layout: auto;
+	}
+		
+}
+
+.claim-receipt {
+	@extend .vendor-info;
+	text-align: center;
+}
+
+//upload
+
+.k-upload {
+	border-radius: 0px;
+	border: none;
+	.k-file {
+		color: #000;
+	}
+	.k-button {
+		outline: none;
+		box-shadow: none;
+	}
+	.k-dropzone {
+		// padding-left: 0px;
+		border-radius: 0px;
+
+		em {
+			visibility: visible;
+		}
+	}
+	.k-icon {
+		width: auto;
+		line-height: 1;
+	}
+	.k-file-success {
+		.k-i-png {
+			display: none;
+		}
+	}
+	.k-file-success {
+		background-color: $color-green-primary;
+		color: #fff;
+			.k-progress {
+			background-color: transparent;
+		}
+	}
+	.k-file-error {
+		background-color: #e4462c;
+		color: #fff;
+			.k-progress {
+			background-color: transparent;
+		}
+	}
+	.k-progress {
+		background-color: #ddd;
+	}
+	
+	.k-upload-button {
+	@extend .button-border;
+		border-color:#ddd;
+		&:after {
+			font-family: "FontAwesome";
+			content: "\f1c5";
+			margin-left: 5px;
+		}
+	}
+	.k-upload-status-total {
+		display: none;
+	}
+	.k-delete {
+		font-weight: 400;
+		line-height: 1.3;
+		outline: none;
+		&:before {
+			content: "Remove";
+		}
+		&:after {
+			font-family: "FontAwesome";
+			content: "\f00d";
+			margin-left: 5px;
+		}
+		&:hover {
+			color: $color-green-light;
+		}
+	}
+}
+	

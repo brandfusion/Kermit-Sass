@@ -1,0 +1,135 @@
+a.arrow:after, 
+a.arrow-right:after { 
+	content:"\2192"; 
+	display: inline-block; 
+	margin-top: -0.25em; 
+	margin-left: 0.25em; 
+	font-size: 1.25em; 
+	line-height: inherit; 
+}
+a.arrow-left:before { 
+	content:"\2190"; 
+	display: inline-block; 
+	margin-top: -0.25em; 
+	margin-right: 0.25em; 
+	font-size: 1.25em; 
+	line-height: inherit; 
+}
+.e-embed-container {
+	height: 0;
+	overflow: hidden;
+	padding-bottom: 56.25%;
+	position: relative;
+}
+.e-embed-container.shadow {
+	@include box-shadow(0 1px 3px rgba(0,0,0,.35));
+}
+.e-embed-container.e-youtube {
+	padding-top: 30px;
+}
+.e-embed-container.e-google-map {
+	padding-bottom: 33.33%;
+	border:1px solid $baseBorderColor;
+	background:#e5e3df;
+	@include border-radius($boxBorderRadius);
+}
+.e-embed-container.e-google-map[data-ratio="3:1"] {
+	padding-bottom: 33.33%;
+}
+.e-embed-container.e-google-map[data-ratio="4:3"] {
+	padding-bottom: 75%;
+}
+.e-embed-container.e-google-map[data-ratio="16:9"] {
+	padding-bottom: 56.25%;
+}
+.e-embed-container.e-google-map .e-google-map-static {
+	width:100%;
+}
+.e-embed-container.e-google-map img {
+	min-width:0;
+	max-width:none;
+	vertical-align:inherit;
+}
+.e-embed-container.e-google-map{
+	.gm-style,
+	.gm-style-iw,
+	.gm-style .gm-style-iw p,
+	.gm-style .gm-style-iw p a,
+	.gm-style .gm-style-iw span,
+	.gm-style .gm-style-iw label,
+	.gm-style .gm-style-iw div {
+		font-family: $baseFontFamily;
+		font-size: floor($baseFontSize * 0.846);
+		font-weight: $eFontWeightNormal;
+		line-height: 1.2;
+		white-space: nowrap;
+	}
+	.gm-style .gm-style-iw p{
+		color: $textColor;
+		margin-bottom: floor($baseFontSize / 3);
+	}
+	.gm-style .gm-style-iw h1,
+	.gm-style .gm-style-iw h2,
+	.gm-style .gm-style-iw h3,
+	.gm-style .gm-style-iw h4,
+	.gm-style .gm-style-iw h1 a,
+	.gm-style .gm-style-iw h2 a,
+	.gm-style .gm-style-iw h3 a,
+	.gm-style .gm-style-iw h4 a{
+		color: $headingsColor;
+		font-family: $baseFontFamily;
+		font-size: floor($baseFontSize * 0.846) + 1;
+		font-weight: $eFontWeightBold;
+		line-height: 1.2;
+		margin: 0 0 floor($baseFontSize / 4);
+	}
+}
+.e-embed-container iframe {
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	@include border-radius($boxBorderRadius);
+}
+
+//align share ikoner med på linje med brødtekst
+.addthis_toolbox{
+	margin-top: 1px;	
+}
+.addthis_default_style .at300b,
+.addthis_default_style .at300bo,
+.addthis_default_style .at300m {
+	float: none;
+	display: inline-block;
+}
+.addthis_toolbox span span{
+	visibility:hidden;
+}
+
+//add option to manually add topmargin to any element
+@media (min-width: 980px) {
+	.topmargin1{
+		margin-top:$baseLineHeight !important;
+	}
+	.topmargin2{
+		margin-top:$baseLineHeight * 2 !important;
+	}
+	.topmargin3{
+		margin-top:$baseLineHeight * 3 !important;
+	}
+	.topmargin4{
+		margin-top:$baseLineHeight * 4 !important;
+	}
+	.topmargin5{
+		margin-top:$baseLineHeight * 5 !important;
+	}
+	.topmargin6{
+		margin-top:$baseLineHeight * 6 !important;
+	}
+}
+
+//background-sections($sectionName, $backgroundColor, $hrColor, $textColor, $headingsColor, $linkColor)
+@include background-section( 'transparent', transparent );
+@include background-section( 'gray' );
+@include background-section( 'black', #2d2d2d, #000, $grayLight, $grayLighter );

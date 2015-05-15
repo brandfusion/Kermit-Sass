@@ -1,0 +1,66 @@
+.e-productdetails{}
+.e-productdetails .e-productdetails-images{}
+.e-productdetails .e-productdetails-images .row-fluid {
+    margin-bottom: 0;
+}
+.e-productdetails .e-productdetails-images .row-fluid [class*="span"]{
+    margin-bottom: $fluidGridGutterWidth;
+}
+.e-productdetails .e-productdetails-images .row-fluid .thumbnail{
+    padding: $fluidGridGutterWidth;
+}
+.e-productdetails .e-productdetails-images + .e-productdetails-action{
+	padding-left:$fluidGridGutterWidth;
+	padding-right:$fluidGridGutterWidth;
+}
+.e-productdetails .e-productdetails-action h2 a{pointer-events:none;}
+
+.e-productdetails .e-productdetails-action form label{
+	float: left;
+	line-height: $baseLineHeight * 1.5; 
+	margin-right: $fluidGridGutterWidth;
+}
+.e-productdetails .e-productdetails-action form input{
+    margin-bottom: 0;
+}
+.e-productdetails .e-productdetails-action form button{
+	margin-left: $fluidGridGutterWidth;
+}
+.e-productdetails .e-productdetails-action form p{
+	margin: .5em 0 0 0;
+	line-height: 1.2; 
+}
+.e-productdetails-related a{color:inherit;}
+
+@media (min-width: 980px) {
+	.e-productdetails-sidebar{
+		padding-left:$fluidGridGutterWidth * 2.125;
+	}	
+	.e-productdetails-sidebar > .e-ecom-grid ul li{
+		width: 100%;
+		height:auto;
+		border-right-width: 0;
+	}
+}
+@media (max-width: 767px) {
+	.e-productdetails .e-productdetails-images .row-fluid [class*="span"] {
+		margin-left:$fluidGridGutterWidth;
+		float:left;
+	}
+	.e-productdetails .e-productdetails-images .row-fluid [class*="span"]:first-child {
+		margin-left:0;
+	}
+	.e-productdetails .e-productdetails-images .row-fluid .span6{
+		@include grid-fluid-span(6, $fluidGridColumnWidth, $fluidGridGutterWidth); 
+	}
+	.e-productdetails .e-productdetails-images .row-fluid .span4{
+		@include grid-fluid-span(4, $fluidGridColumnWidth, $fluidGridGutterWidth); 
+	}
+	.e-productdetails .e-productdetails-images .row-fluid .span3{
+		@include grid-fluid-span(3, $fluidGridColumnWidth, $fluidGridGutterWidth); 
+	}
+	.e-productdetails .e-productdetails-images .row-fluid .span2{
+		@include grid-fluid-span(2, $fluidGridColumnWidth, $fluidGridGutterWidth); 
+	}
+}
+

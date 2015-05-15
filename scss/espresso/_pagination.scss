@@ -1,0 +1,8 @@
+.pager,
+.pagination {margin:0;}
+.pagination ul{
+	margin:0 0 $baseLineHeight / 3;
+	@include box-shadow(none);
+}
+//Overskriv DW's news list paging 
+.pagination b{font-weight:inherit;}

@@ -1,0 +1,81 @@
+/* Espresso navigation > utilities-bottom */
+$eNavUtilitiesBottomFontSize:		 	ceil($baseFontSize * 0.75);
+$eNavUtilitiesBottomBackgroundColor: 	$navbarInverseBackground;
+$eNavUtilitiesBottomBorderColor: 		$navbarInverseBorder;
+$eNavUtilitiesBottomLinkColor: 			$navbarInverseLinkColor;
+$eNavUtilitiesBottomLinkColorHover: 	$navbarInverseLinkColorHover;
+$eNavUtilitiesBottomIconColor:			$eNavUtilitiesBottomLinkColor;
+$eNavUtilitiesBottomIconColorHover: 	$eNavUtilitiesBottomLinkColorHover;
+
+.e-nav-utilities-bottom{ 
+	font-size: $eNavUtilitiesBottomFontSize;
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: $zindexFixedNavbar;
+	background-color:$eNavUtilitiesBottomBackgroundColor;
+	border-top:1px solid $eNavUtilitiesBottomBorderColor; 
+	@include box-shadow(0 -2px 2px rgba(0, 0, 0, 0.25));
+	@include border-radius(0);
+}
+.e-nav-utilities-bottom .nav {
+	margin-bottom: 0; 
+	@include clearfix();
+}
+.e-nav-utilities-bottom .nav .dropdown-menu { 
+	margin-bottom:0;
+	@include border-bottom-left-radius(0);
+	@include border-bottom-right-radius(0);
+}
+.e-nav-utilities-bottom .nav > li:first-child{
+	margin-left:- $gridGutterWidth / 1.5;
+}
+.e-nav-utilities-bottom .nav > li > a { 
+	color: $eNavUtilitiesBottomLinkColor;
+	margin: 0;
+	padding-top:0.5em;
+	padding-bottom:0.5em;
+	background:none;
+	@include border-radius(0); 
+}
+.e-nav-utilities-bottom .nav > li > a > i{
+	font-size: ceil($baseFontSize - 2); 
+	color: $eNavUtilitiesBottomIconColor;
+	padding:0 0.125em;
+}
+.e-nav-utilities-bottom .nav > li:last-child > a > i:last-child{
+	padding-right: 0;
+}
+.e-nav-utilities-bottom .nav > li:not(.dropdown.open) > a:hover {
+	color: $eNavUtilitiesBottomLinkColorHover;
+}
+.e-nav-utilities-bottom .nav > li > a:hover > i{ 
+	color: $eNavUtilitiesBottomIconColorHover;
+}
+.e-nav-utilities-bottom .nav > li:first-child > a {
+}
+.e-nav-utilities-bottom .e-website-by{ 
+	float:right;
+}
+.e-nav-utilities-bottom .e-website-by a { 
+	padding-right:0;
+	@include opacity(45);
+}
+@media (max-width: $navbarCollapseWidth){
+	.e-nav-utilities-bottom .nav > li:first-child {
+		margin-left: 0;
+	}
+	.e-nav-utilities-bottom .nav > li > a{
+		padding-left:$gridGutterWidth / 2;
+		padding-right:$gridGutterWidth / 2;
+	}
+}
+@media (max-width: 767px) {
+	.e-nav-utilities-bottom{ 
+		position: static;
+	}
+	.e-nav-utilities-bottom .e-website-by{ 
+		display: none;
+	}
+}

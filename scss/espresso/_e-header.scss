@@ -1,0 +1,45 @@
+$eHeaderHeight:	 	$baseLineHeight * 3.5;
+
+.e-header {
+	padding-top:$baseLineHeight / 3;
+	padding-bottom:$baseLineHeight / 3;
+	background-color: $contentBackgroundColor;
+}
+.e-header .e-logo {
+	margin:0;
+	width:100%;
+	line-height: $eHeaderHeight;
+}
+.e-header .e-logo img {
+	display:inline-block;
+	@include border-radius(0);
+	max-width:100%;
+}
+.e-header .e-search-form {
+	margin:0 auto;
+	margin-top: ( $eHeaderHeight / 2 ) - ( $inputHeight / 2 );
+}
+
+@media (max-width: 979px) {
+	.e-header [class*="span"]{
+		width:50%;
+		margin: 0;
+		float:left;
+	}
+}
+@media (max-width: 767px) {
+	.e-header {
+		padding-top:2%;
+		padding-bottom:2%;
+	}
+	body > div.e-header > .container{
+		padding-right:0;
+	}
+	.e-header .e-logo {
+		margin: 0;
+		line-height: $baseLineHeight * 2.154;
+		padding-right: $fluidGridGutterWidth * 5;
+		overflow: hidden;
+		@include box-sizing(border-box);
+	}
+}

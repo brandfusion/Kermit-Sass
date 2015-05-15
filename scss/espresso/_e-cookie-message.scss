@@ -1,0 +1,35 @@
+$eCookieMessageTextColor: 				$navbarInverseText;
+$eCookieMessageLinkColor: 				$eCookieMessageTextColor;
+$eCookieMessageBackground: 				$navbarInverseBackground;
+$eCookieMessageBtnTextColor: 			lighten($eCookieMessageTextColor, 10%);
+$eCookieMessageBtnBackground: 			lighten($eCookieMessageBackground, 5%);
+$eCookieMessageBtnBackgroundHighlight: 	lighten($eCookieMessageBackground, 10%);
+
+.e-cookie-message{
+	display:none;
+	font-size: $baseFontSize * 0.846 * 0.846;
+	line-height: 1.4;
+	padding-top: $baseLineHeight / 5;
+	padding-bottom: $baseLineHeight / 5;
+	margin:0;
+	border-bottom:1px solid darken($eCookieMessageBackground, 10%);
+	@include border-radius(0);
+	background:$eCookieMessageBackground;
+	color:$eCookieMessageTextColor;
+}
+.e-cookie-message p{
+	margin-bottom: 0;
+}
+.e-cookie-message a{
+	text-decoration:underline;
+	color: $eCookieMessageLinkColor;
+}
+.e-cookie-message .btn{
+	font-weight:$eFontWeightBold;
+	font-size: $baseFontSize * 0.846 * 0.846;
+	line-height: $baseLineHeight * 0.846 * 0.846;
+	text-decoration:none;
+	margin-left: 1em;
+	padding:0 1em;
+	@include buttonBackground($eCookieMessageBtnBackgroundHighlight, $eCookieMessageBtnBackground, $eCookieMessageBtnTextColor, 0 1px 1px rgba(255,255,255,.15));
+}

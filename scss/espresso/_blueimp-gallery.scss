@@ -1,0 +1,86 @@
+.blueimp-gallery > .slides > .slide-loading {
+	background: none;
+}
+.blueimp-gallery > .slides > .slide-error {
+	background: $red;
+}
+.blueimp-gallery > .close,
+.blueimp-gallery > .prev,
+.blueimp-gallery > .next {
+	text-align: center;
+	color:$white;
+	font-size: $baseFontSize * 3;
+	height: 1em;
+	width: 1em;
+	line-height:1;
+	margin: -0.5em 0 0;
+	padding:0;
+	border:2px solid $white;
+	background: $grayDarker;
+	@include opacity(100);
+	@include border-radius(50%);
+    @include box-shadow(0 2px 2px rgba(0, 0, 0, 0.25));
+	@media (max-width: 767px) {
+		font-size: $baseFontSize * 2;
+	}
+}
+.blueimp-gallery > .next{
+	left: auto;
+	right: 0.33em;
+}
+.blueimp-gallery > .prev{
+	right: auto;
+	left: 0.33em;
+}
+.blueimp-gallery > .prev > i,
+.blueimp-gallery > .next > i{
+    font-size: 1em;
+    left: 0;
+    right: 0;
+    line-height: 1;
+    margin-top: -0.525em;
+    position: absolute;
+    top: 50%;
+}
+.blueimp-gallery > .next > i{
+    margin-left: 0.0846em;
+}
+.blueimp-gallery > .prev > i{
+    margin-right: 0.0846em;
+}
+.blueimp-gallery > .close {
+	left: auto;
+	right: 0.33em;
+	bottom: auto;
+	top: 0.33em;
+    line-height: 0.95;
+	margin: 0;
+}
+.blueimp-gallery > .title {
+	left:0;
+	top:$baseFontSize * 0.846;
+	right:0;
+	text-align: center;
+	@include opacity(100);
+	margin:0 $baseFontSize * 3;
+}
+//Indicators
+.blueimp-gallery > .indicator {
+	right: $baseFontSize * 2.5;
+	bottom: 0;
+	left: $baseFontSize * 2.5;
+	margin: 0;
+}
+.blueimp-gallery > .indicator > li {
+	width: $baseFontSize * 3;
+	height: $baseFontSize * 3;
+	border-radius: $imageBorderRadius;
+	margin:0 $baseFontSize / 4 $baseFontSize / 2;
+	@include opacity(100);
+}
+.blueimp-gallery > .indicator > .active {
+	background-color: $linkColor;
+	border: 1px solid $linkColor;
+	@include box-shadow(1px 2px 3px rgba($linkColor,.65));
+	@include opacity(100);
+}

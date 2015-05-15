@@ -1,0 +1,65 @@
+/* Espresso navigation > utilities-top */
+$eNavUtilitiesTopFontSize:		 	ceil($baseFontSize * 0.75);
+$eNavUtilitiesTopBackgroundColor: 	$baseBackgroundColor;
+$eNavUtilitiesTopBorderColor: 		$baseBorderColor;
+$eNavUtilitiesTopLinkColor: 		$textColorMuted;
+$eNavUtilitiesTopLinkColorHover: 	$textColor;
+$eNavUtilitiesTopIconColor:			$textColorMuted;
+$eNavUtilitiesTopIconColorHover: 	$textColor;
+
+.e-nav-utilities-top{ 
+	font-size: $eNavUtilitiesTopFontSize;
+	margin: 0; 
+	background-color: $eNavUtilitiesTopBackgroundColor;
+	border-bottom: 1px solid $eNavUtilitiesTopBorderColor; 
+	@include border-radius(0);
+}
+.e-nav-utilities-top .nav {
+	margin-bottom: 0; 
+	@include clearfix();
+}
+.e-nav-utilities-top .nav .dropdown-menu { 
+	margin-top: -1px;
+	@include border-top-left-radius(0);
+	@include border-top-right-radius(0);
+}
+.e-nav-utilities-top .nav > li:last-child { 
+	margin-right:- $gridGutterWidth / 1.5;
+}
+.e-nav-utilities-top .nav > li > a { 
+	color: $eNavUtilitiesTopLinkColor;
+	margin: 0; 
+	padding-top: $baseLineHeight / 3;
+	padding-bottom: $baseLineHeight / 3;	
+	background: none;
+	@include border-radius(0); 
+}
+.e-nav-utilities-top .nav > li > a > i{
+	font-size: ceil($baseFontSize - 2); 
+	color: $eNavUtilitiesTopIconColor;
+	padding: 0 0.125em;
+}
+.e-nav-utilities-top .nav > li:last-child > a > i:last-child{
+	padding-right: 0;
+}
+.e-nav-utilities-top .nav > li:not(.dropdown.open) > a:hover {
+	color: $eNavUtilitiesTopLinkColorHover;
+}
+.e-nav-utilities-top .nav > li > a:hover > i{ 
+	color: $eNavUtilitiesTopIconColorHover;
+}
+@media (max-width: 767px) {
+	.e-nav-utilities-top .nav{ 
+		font-size: 0.846em;
+		margin-left: - $gridGutterWidth / 3;
+		margin-right: - $gridGutterWidth / 3;
+	}
+	.e-nav-utilities-top .nav > li:first-child { 
+	}
+	.e-nav-utilities-top .nav > li:last-child { 
+	}
+	.e-nav-utilities-top .nav > li > a { 
+		padding-left: $gridGutterWidth / 3;
+		padding-right: $gridGutterWidth / 3; 
+	}
+}

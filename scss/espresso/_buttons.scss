@@ -1,0 +1,54 @@
+.btn + .btn,
+.btn:visible + a[href],
+.btn:visible + .btn{
+	margin-left: $gridGutterWidth; 
+}
+// Buttons
+// --------------------------------------------------
+
+
+// Base styles
+// --------------------------------------------------
+
+// Core
+.btn {
+	padding: 0.375em 1.25em;
+}
+.btn:hover {
+	transition:none;
+}
+
+
+
+// Button Sizes
+// --------------------------------------------------
+
+// Large
+.btn-large {
+	padding: 0.5em 1.375em;
+}
+
+// Small
+.btn-small {
+	padding:0.25em 1em;
+}
+
+// Mini
+.btn-mini {
+	padding:0 0.5em;
+}
+
+// Alternate buttons
+// --------------------------------------------------
+
+// Provide *some* extra contrast for those who can get it
+.btn-branded.active {
+  color: rgba(255,255,255,.75);
+}
+
+// Set the backgrounds
+// -------------------------
+.btn-branded {
+  @include buttonBackground(lighten($brandColor, 15%), $brandColor);
+}
+

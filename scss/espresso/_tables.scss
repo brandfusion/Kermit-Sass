@@ -1,0 +1,97 @@
+//
+// Tables
+// --------------------------------------------------
+// BASE TABLES
+// -----------------
+// BASELINE STYLES
+// ---------------
+.table {
+	th,
+	td {
+		padding: ceil( $baseLineHeight / 3 );
+	}
+	.table {
+		background-color: $contentBackgroundColor;
+	}
+}
+.table tbody tr:last-child {
+	border-bottom: 1px solid $tableBorder;
+}
+.table thead th{
+	white-space: nowrap;
+}
+.table td p:last-child{
+	margin-bottom: 0;
+}
+
+// CONDENSED TABLE W/ HALF PADDING
+// -------------------------------
+.table-condensed {
+	th,
+	td {
+		padding: ceil( $baseLineHeight / 6 ) ( ceil( $baseLineHeight / 6 ) + 1);
+	}
+}
+
+/* Responsive table
+============================================= */
+@media (max-width:767px) {
+	.table-responsive {
+		font-size: $baseFontSize;
+	}
+}
+@media (max-width:599px) {
+	.table-responsive thead {
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	.table-responsive tbody tr {
+		display: block;
+		border-top: 1px solid $tableBorder;
+	}
+	.table-responsive tbody tr:first-child{
+		border-top: none;
+	}
+	.table-responsive tbody tr:last-child,
+	.table-responsive tbody tr th,
+	.table-responsive tbody tr td {
+		border-color: lighten($tableBorder, 10%);
+	}
+	.table-responsive tbody tr:nth-child(odd) th,
+	.table-responsive tbody tr:nth-child(odd) td {
+		background-color: $tableBackgroundAccent;
+	}
+	.table-responsive tbody tr th:first-child {
+		width: 96%;
+		padding: 2%;
+		border: 0;
+		display: block;
+		background: $grayDark;
+		color: $white;
+	}
+	.table-responsive tbody td{
+		width: 100%;
+		padding: $baseLineHeight / 5;
+		display: block;
+		position: relative;
+		@include box-sizing(border-box);
+		min-height: $baseLineHeight + ( $baseLineHeight / 5 * 2 );
+	}
+	.table-responsive tbody th:first-child + td:last-child{
+		background-color: $tableBackgroundAccent;
+	}
+	.table-responsive tbody td:not(th:first-child + td:last-child){
+		padding-left: 40%;
+	}
+	.table-responsive tbody td:not(th:first-child + td:last-child):before {
+		width: 40%;
+		padding: $baseLineHeight / 5;
+		position: absolute;
+		top: 0;
+		left: 0;
+		font-weight: bold;
+		content: attr(data-th);
+		@include box-sizing(border-box);
+	}
+}

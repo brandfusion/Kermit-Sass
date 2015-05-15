@@ -1,0 +1,110 @@
+[class*="span"] > .e-img{display:block;}
+[class*="span"] > h1 + .e-img > img,
+[class*="span"] > h2 + .e-img > img,
+[class*="span"] > h3 + .e-img > img,
+[class*="span"] > h4 + .e-img > img,
+[class*="span"] > h5 + .e-img > img,
+[class*="span"] > h6 + .e-img > img{margin-top: $baseLineHeight / 3;}
+
+[class*="span"] > .e-img > img.left{
+	float:left;
+}
+[class*="span"] > .e-img > img.right{
+	float:right;
+}
+[class*="span"] > .e-img > img.center{
+	float:none;
+	display:block;
+	margin:0 auto;
+}
+[class*="span"] > .e-img > img,
+[class*="span"] > .e-img.rounded > img{
+	@include border-radius($imageBorderRadius);
+}
+[class*="span"] > .e-img > img.donotround{
+	@include border-radius(0);
+}
+[class*="span"] > .e-img > img.zoom{
+	@include transition(all 0.2s ease-in-out 0s);
+}
+[class*="span"] > .e-img > img.zoom:hover{
+	@include scale(1.1);
+}
+[class*="span"] > .e-img > img.shadow{
+	@include box-shadow(0 1px 3px rgba(0,0,0,.35));
+}
+[class*="span"] > .e-img > img.border{
+	display: block;
+	@include border-radius($imageBorderRadius);
+	padding: floor($baseLineHeight / 4);
+	border: 1px solid $baseBorderColor;
+	@include box-sizing(border-box);
+}
+[class*="span"] > img.shadow.border,
+[class*="span"] > .e-img > img.shadow.border{
+	@include box-shadow(0 1px 3px rgba(0,0,0,.15));
+}
+[class*="span"] > .e-img > img.circle{
+	@include border-radius(50%);
+}
+[class*="span"] > .e-img > img.circle.border{
+	border:0;
+	@include box-shadow(0 0 2px rgba(0,0,0,.30) inset);
+}
+[class*="span"] > .e-img > img.icon{
+	border:0;
+	@include border-radius(50%);
+}
+[class*="span"] > .e-img > img.icon.border{
+	@include box-shadow(0 0 2px rgba(0,0,0,.30) inset);
+}
+[class*="span"] > .e-img > img.icon.bg{
+	background-color:$grayLighter;
+}
+
+[class*="span"] > .e-img > img.bleedright{
+	margin-left: $eResponsiveBodyPadding * 1;
+	margin-right: - $eResponsiveBodyPadding * 1;
+	@media (min-width: 768px){
+		margin-left: $gridGutterWidth * 1;
+		margin-right: - $gridGutterWidth * 1;
+	}
+	@media (min-width: 1240px) {
+		margin-left: $gridGutterWidth * 3;
+		margin-right: - $gridGutterWidth * 3;
+	}
+	@media (min-width: 1320px) {
+		margin-left: $gridGutterWidth * 4;
+		margin-right: - $gridGutterWidth * 4;
+	}
+	@media (min-width: 1640px) {
+		margin-left: $gridGutterWidth * 5;
+		margin-right: - $gridGutterWidth * 5;
+	}
+}
+[class*="span"] > .e-img > img.bleedleft{
+	margin-right: $eResponsiveBodyPadding * 1;
+	margin-left: - $eResponsiveBodyPadding * 1;
+	@media (min-width: 768px){
+		margin-right: $gridGutterWidth * 1;
+		margin-left: - $gridGutterWidth * 1;
+	}
+	@media (min-width: 1240px) {
+		margin-right: $gridGutterWidth * 3;
+		margin-left: - $gridGutterWidth * 3;
+	}
+	@media (min-width: 1320px) {
+		margin-right: $gridGutterWidth * 4;
+		margin-left: - $gridGutterWidth * 4;
+	}
+	@media (min-width: 1640px) {
+		margin-right: $gridGutterWidth * 5;
+		margin-left: - $gridGutterWidth * 5;
+	}
+}
+
+
+@include images-bleed(7,9);
+@include images-bleed(8,12);
+@include images-bleed-full(8,12);
+@include images-bleed-full(12,12);

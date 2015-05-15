@@ -1,0 +1,29 @@
+.thumbnails {
+	margin-top:0;
+	margin-bottom:0;
+}
+.thumbnail {
+	border-color:$baseRuleColor;
+	@include border-radius($imageBorderRadius);
+	padding: ceil($baseLineHeight / 3);
+}
+.caption,
+.thumbnail .caption {
+	padding:.5em 0 .25em ;
+}
+.caption small,
+.thumbnail .caption small{
+	font-size:.846em;
+}
+a.thumbnail:hover {
+  @include box-shadow(0 1px 4px rgba($linkColor,.25));
+}
+.thumbnail > img,
+.thumbnail > a > img {
+	display: block;
+	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	@include border-radius($imageBorderRadius);
+}
+

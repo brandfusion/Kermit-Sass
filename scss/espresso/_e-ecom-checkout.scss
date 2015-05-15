@@ -1,0 +1,155 @@
+// THE CHECKOUT FLOW
+// --------
+
+.e-header.e-header-checkout{
+	padding-top:$baseLineHeight;
+	padding-bottom:0;
+}
+.e-header-checkout .e-logo {
+	line-height: $baseLineHeight * 2.5;
+	max-width: 100%;
+}
+
+// Outer container
+.e-checkout-progress{
+	overflow: hidden;
+	text-align: center;
+	height: $baseLineHeight * 4;
+}
+
+// Steps
+.step{
+	width: $baseLineHeight * 5;
+	float:left;
+	@include opacity(50);
+	font-weight:bold;
+}
+.step-divider{
+	width: $baseLineHeight * 4;
+	font-size: $baseFontSize * 2;
+	line-height: $baseLineHeight * 2.5;
+	float:left;
+	color:$baseBorderColor;
+}
+.step .step-count{
+	width: $baseLineHeight * 2.5;
+	height: $baseLineHeight * 2.5;
+	@include border-radius($baseLineHeight * 2.5);
+	line-height: $baseLineHeight * 2.5;
+	font-size: $baseFontSize * 1.5;
+	border:1px solid $baseBorderColor;
+	border-color:rgba(0,0,0,.25);
+	@include box-sizing(border-box);
+	margin:0 auto $baseLineHeight / 3;
+	text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+	background-color: $baseBackgroundColor;
+	color: $textColor;
+}
+.step .step-title{
+	white-space:nowrap;
+	margin-left:- $baseLineHeight * 2 ;
+	margin-right:- $baseLineHeight * 2 ;
+	margin-bottom:0;
+}
+.step.step-active{ @include opacity(100); }
+.step.step-active,
+.step.step-active + .step-divider{
+	color: $brandColor;
+}
+.step.step-active .step-count{
+	background-color: $brandColor;
+	color: $white;
+	font-weight:bold;
+}
+
+
+//form actions til checkout flow
+.e-checkout-actions{
+	margin-bottom:$baseLineHeight;
+	padding:$baseLineHeight / 2 $gridGutterWidth;	
+	background-color: $formActionsBackground;
+	border-top:1px solid $eFormActionsBorder;
+}
+.e-checkout-actions .row-fluid{
+	margin-bottom:0;
+}
+.e-checkout-actions .btn-success{
+	font-weight:bold;
+}
+.e-checkout-actions .btn-success i{
+	margin-left:$baseFontSize / 2;
+}
+.e-checkout-actions .btn-link i{
+	margin-right:$baseFontSize / 2;
+}
+#TermsAndConditions label{	
+	padding:$baseLineHeight $gridGutterWidth * 2;
+	border:1px solid $baseBorderColor;
+}
+@media (max-width: 767px) {
+	.e-checkout-actions{
+		margin-left:-$gridGutterWidth;
+		margin-right:-$gridGutterWidth;
+		margin-top:0;
+		margin-bottom:0;
+	}
+	.e-checkout-actions .row-fluid .span6{
+		float:left;
+		width:50%;
+	}
+	// Outer container
+	.e-checkout-progress{
+		overflow: hidden;
+		text-align: left;
+		height: auto;
+		margin-top:-$baseLineHeight;
+		margin-left:-$gridGutterWidth;
+		margin-right:-$gridGutterWidth;
+		margin-bottom:0;
+		@include box-sizing(border-box);
+	}
+	// Steps
+	.step{
+		width: 100%;
+		overflow:hidden;
+		float:none;
+		background-color: $baseBackgroundColor;
+		padding-top:$baseLineHeight / 6;
+		padding-left:$gridGutterWidth;
+		padding-right:$gridGutterWidth;
+		padding-bottom:$baseLineHeight / 6;
+		border-bottom:1px solid $baseBorderColor;
+		border-color:rgba(0,0,0,.25);
+	}
+	.step-divider{
+		display:none;
+	}
+	.step .step-count,
+	.step .step-title{
+		float:left;
+		width: auto;
+		height: auto;
+		line-height: $baseLineHeight;
+		font-size: $baseFontSize;
+		border:0;
+		margin:0 !important;
+		text-shadow:none;
+		padding:0 $baseFontSize / 2;
+	}
+	.step .step-count:after{content:'. '}
+	.step.step-active{
+		@include opacity(100);
+		background-color: $brandColor;
+		color: $white;
+		font-weight:bold;
+	}
+	.step.step-active .step-count,
+	.step.step-active .step-title{
+		background-color: $brandColor;
+		color: $white;
+		font-weight:bold;
+	}
+	#TermsAndConditions .controls{	
+		margin-left:0;
+	}
+}

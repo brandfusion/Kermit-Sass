@@ -1,0 +1,265 @@
+// Variables
+// Espresso variables to override the default look and feel of Bootstrap
+// ---------------------------------------------------------------------
+$eResponsiveBodyPadding	: $grid-gutter-width / 2;
+
+// GLOBAL VALUES
+// -------------
+
+// Grays
+// -------------------------
+$black:                 #000;
+$white:                 #fff;
+$gray:                  #555;
+$grayDarker:            darken($gray, 20%);
+$grayDark:              darken($gray, 10%);
+$grayLight:             lighten($gray, 30%);
+$grayLighter:           lighten($gray, 60%);
+
+// Accent colors
+// -------------------------
+$blue:                  #3498db;
+$green:                 #27ae60;
+$red:                   #c0392b;
+$orange:                #f39c12;
+
+$info:                  $blue;
+$success:               $green;
+$danger:                $red;
+$error:                 $danger;
+$important:             $danger;
+$warning:               $orange;
+
+// CVI 
+// -------------------------
+$brandColor:            	#ff5100;
+$baseBorderRadius:			3px;
+$boxBorderRadius:     		3px;
+$imageBorderRadius:     	1px;
+$btnBorderRadius:       	2px;
+$baseBorderColor:			#e2e2e2;
+$baseRuleColor:				darken($baseBorderColor, 10%);
+$baseBackgroundColor:		#f1f1f1;
+$contentBackgroundColor:	$white;
+
+
+// Scaffolding
+// -------------------------
+$textColor:             #474747;
+$textColorMuted:        lighten($textColor, 20%);
+$bodyBackground:   		$gray;
+
+	$eFontWeightLight: 	300;
+	$eFontWeightNormal:	400;
+	$eFontWeightBold: 	600;
+
+// Links
+// -------------------------
+$linkColor:             $blue;
+$linkColorHover:        $linkColor;
+$linkColorVisited:      darken($linkColorHover, 5%);
+
+
+// Typography
+// -------------------------
+$sansFontFamily:        "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$serifFontFamily:       Georgia, "Times New Roman", Times, serif;
+$monoFontFamily:        Menlo, Monaco, Consolas, "Courier New", monospace;
+
+$baseFontSize:          16px;
+$baseFontFamily:        $sansFontFamily;
+$baseLineHeight:        24px;
+
+$headingsFontFamily:    inherit; // empty to use BS default, $baseFontFamily
+$headingsColor:         #000000; // empty to use BS default, $textColor
+$headingsColorMuted:    lighten($headingsColor, 20%);
+
+
+// Tables
+// -------------------------
+$tableBorder:                       $baseRuleColor; // table and cell border
+$tableBackground:                   $contentBackgroundColor; // overall background-color
+$tableBackgroundAccent:             darken($tableBackground, 3%); // for striping
+$tableBackgroundHover:              darken($tableBackgroundAccent, 10%);  // for hover
+
+
+// Buttons
+// -------------------------
+$btnBackground:                     $white;
+$btnBackgroundHighlight:            darken($white, 10%);
+$btnBorder:                         $grayLight;
+
+$btnPrimaryBackground:              $linkColor;
+$btnPrimaryBackgroundHighlight:     darken($btnPrimaryBackground, 10%);
+
+$btnInfoBackground:                 lighten($info, 15%);
+$btnInfoBackgroundHighlight:        $info;
+
+$btnSuccessBackground:              lighten($success, 15%);
+$btnSuccessBackgroundHighlight:     $success;
+
+$btnWarningBackground:              lighten($warning, 15%);
+$btnWarningBackgroundHighlight:     $warning;
+
+$btnDangerBackground:               lighten($danger, 15%);
+$btnDangerBackgroundHighlight:      $danger;
+
+$btnInverseBackground:              $gray;
+$btnInverseBackgroundHighlight:     $grayDarker;
+
+
+// Forms
+// -------------------------
+$inputBackground:               $white;
+$inputBorder:                   darken($baseRuleColor, 25%);
+$inputBorderRadius:             $baseBorderRadius + 1;
+$formActionsBackground:         #f5f5f5;
+$inputHeight:                   $baseLineHeight + 10px; // base line-height + 8px vertical padding + 2px top/bottom border
+	$eInputTextColor:              	$textColor;
+	$eInputFocusColor:              $linkColor;
+	$eFormActionsBorder: 			$baseBorderColor;
+
+// Dropdowns
+// -------------------------
+$dropdownBackground:            $white;
+$dropdownBorder:                darken($baseRuleColor, 20%);
+$dropdownDividerTop:            $grayLighter;
+$dropdownDividerBottom:         $white;
+
+$dropdownLinkColor:             $textColor;
+$dropdownLinkColorHover:        $textColor;
+$dropdownLinkColorActive:       #fff;
+
+$dropdownLinkBackgroundActive:  $brandColor;
+$dropdownLinkBackgroundHover:   $baseBackgroundColor;
+
+
+
+// COMPONENT VARIABLES
+// --------------------------------------------------
+
+
+// Hr border color
+// -------------------------
+$hrBorder:                $baseRuleColor;
+
+
+// Horizontal forms & lists
+// -------------------------
+$horizontalComponentOffset:       ( $gridColumnWidth * 2 ) + ( $gridGutterWidth * 2 );
+
+
+// Wells
+// -------------------------
+$wellBorderColor:				$baseBorderColor;
+$wellBackgroundColor:			$baseBackgroundColor;
+
+
+
+// Navbar
+// -------------------------
+$navbarCollapseWidth:             979px;
+$navbarCollapseDesktopWidth:      $navbarCollapseWidth + 1;
+
+$navbarHeight:                    44px;
+$navbarBackgroundHighlight:       $baseBackgroundColor;
+$navbarBackground:                $baseBackgroundColor;
+$navbarBorder:                    $baseBorderColor;
+
+$navbarText:                      $textColor;
+$navbarLinkColor:                 $textColorMuted;
+$navbarLinkColorHover:            #000;
+$navbarLinkColorActive:           #fff;
+$navbarLinkBackgroundHover:       transparent;
+$navbarLinkBackgroundActive:      #fff;
+
+$navbarBrandColor:                $navbarLinkColor;
+
+// Inverted navbar
+$navbarInverseBackground:                #0c793a;
+$navbarInverseBackgroundHighlight:       #fff;
+$navbarInverseBorder:                    #000;
+
+$navbarInverseText:                      #b5b5b5;
+$navbarInverseLinkColor:                 $navbarInverseText;
+$navbarInverseLinkColorHover:            #fff600;
+$navbarInverseLinkColorActive:           #fff600;
+$navbarInverseLinkBackgroundHover:       transparent;
+$navbarInverseLinkBackgroundActive:      #fff;
+
+$navbarInverseSearchBackground:          lighten($navbarInverseBackground, 25%);
+$navbarInverseSearchBackgroundFocus:     $white;
+$navbarInverseSearchBorder:              $navbarInverseBackground;
+$navbarInverseSearchPlaceholderColor:    #ccc;
+
+$navbarInverseBrandColor:                $navbarInverseLinkColor;
+
+
+// Pagination
+// -------------------------
+$paginationBackground:                $contentBackgroundColor;
+$paginationBorder:                    $baseRuleColor;
+$paginationActiveBackground:          $baseBackgroundColor;
+
+
+// Utility navigation 
+// -------------------------
+$navUtilityBackground:            $baseBackgroundColor;
+$navUtilityBorder:		          $baseBorderColor;
+$navUtilityLinkColor:             lighten($textColor, 15%);
+
+// Top navigation 
+// -------------------------
+$navTopBackground:                $baseBackgroundColor;
+$navTopLinkColor:                 $textColor;
+
+
+// Left navigation 
+// -------------------------
+$navLeftBackground:                $white;
+$navLeftBackgroundHover:           $white;
+$navLeftBackgroundActive:          $brandColor;
+$navLeftLinkColor:                 $textColorMuted;
+$navLeftLinkColorHover:            #000;
+$navLeftLinkColorActive:           $white;
+$navLeftLinkColorInpath:           $brandColor;
+$navLeftBorderColor:               $baseBorderColor;
+
+
+// Form states and alerts
+// -------------------------
+$warningText:             $warning;
+$warningBackground:       desaturate(lighten($warning, 40), 7%);
+$warningBorder:           darken(adjust-hue($warningBackground, -10), 15%);
+
+$errorText:               $error;
+$errorBackground:         desaturate(lighten($errorText, 40), 7%);
+$errorBorder:             darken(adjust-hue($errorBackground, -10), 15%);
+
+$successText:             $success;
+$successBackground:       desaturate(lighten($successText, 40), 10%);
+$successBorder:           darken(adjust-hue($successBackground, -10), 15%);
+
+$infoText:                $info;
+$infoBackground:          desaturate(lighten($infoText, 40), 7%);
+$infoBorder:              darken(adjust-hue($infoBackground, -10), 15%);
+
+$brandedText:             $brandColor;
+$brandedBackground:       desaturate(lighten($brandedText, 45), 5%);
+$brandedBorder:           darken(adjust-hue($brandedBackground, -10), 15%);
+
+// Tooltips and popovers
+// -------------------------
+$tooltipColor:            #fff;
+$tooltipBackground:       #000;
+$tooltipArrowWidth:       5px;
+$tooltipArrowColor:       $tooltipBackground;
+
+$popoverBackground:       #fff;
+$popoverArrowWidth:       10px;
+$popoverArrowColor:       #fff;
+$popoverTitleBackground:  darken($popoverBackground, 3%);
+
+// Special enhancement for popovers
+$popoverArrowOuterWidth:  $popoverArrowWidth + 1;
+$popoverArrowOuterColor:  rgba(0,0,0,.25);

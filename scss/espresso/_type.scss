@@ -1,0 +1,230 @@
+//
+// Typography
+// --------------------------------------------------
+
+
+// Body text
+// -------------------------
+body{ font-weight: $eFontWeightNormal; }
+h1 {
+	font-size: ceil($baseFontSize * 3);
+	line-height: 1.1;
+	font-weight:$eFontWeightBold;
+	letter-spacing: -0.05em;
+	margin-top: $baseLineHeight * 1.5;
+	margin-bottom: $baseLineHeight;
+}
+h2 {
+	font-size: ceil($baseFontSize * 1.75);
+	line-height: 1.15;
+	font-weight:$eFontWeightBold;
+	letter-spacing: -0.025em;
+	margin-top: $baseLineHeight * 1.5;
+	margin-bottom: $baseLineHeight / 2;
+}
+h2:first-child,
+.pidlink:first-child + h2 { 
+	margin-top: $baseLineHeight / 6;
+}
+h3 {
+	font-size: ceil($baseFontSize + 1);
+	line-height: 1.25;
+	font-weight:$eFontWeightBold;
+	//letter-spacing: -0.0125em;
+	margin-top: $baseLineHeight * 0.846;
+	margin-bottom: $baseLineHeight / 4;
+}
+h3:first-child,
+.pidlink:first-child + h3 {
+	margin-top: $baseLineHeight / 6;
+}
+h4 {
+	font-size: ceil($baseFontSize * 1);
+	line-height: 1.2;
+	font-weight:$eFontWeightBold;
+	letter-spacing: 0.0846em;
+	text-transform:uppercase;
+	margin-top: $baseLineHeight;
+	margin-bottom: $baseLineHeight / 3;
+	color:$textColorMuted;
+}
+h4:first-child,
+.pidlink:first-child + h4 {
+	margin-top: $baseLineHeight / 6;
+}
+h4 + h1,
+h4 + h2,
+h4 + h3,
+h4 + h4 { margin-top:0; }
+
+h1 a,
+h2 a,
+h3 a,
+h4 a{ color: inherit; text-decoration: none; }
+
+h1 a:hover,
+h2 a:hover,
+h3 a:hover,
+h4 a:hover{ color: inherit; }
+
+h5,
+h6 { font-size: inherit; font-weight: $eFontWeightBold; margin: 0; }
+
+h1 .icon-fixed-width,
+h2 .icon-fixed-width,
+h3 .icon-fixed-width,
+h4 .icon-fixed-width{ text-align:left;padding-right:0.154em; }
+
+.e-img + p { margin-top: $baseLineHeight / 2; }
+@media (min-width: 768px) {
+	div[id^="dwcontent"].span12 .row .span12 p[style*="center"] { 
+		padding-left: $fluidGridColumnWidth * 2;
+		padding-right: $fluidGridColumnWidth * 2;
+	}
+}
+
+.lead {
+	font-size: ceil($baseFontSize * 1.5);
+	line-height: 1.5;
+	font-weight: $eFontWeightLight; 
+	color:$textColorMuted;
+}
+.muted { color: $textColorMuted; }
+
+a:hover{text-decoration:underline;}
+a i[class*="icon-"],
+a:hover i[class*="icon-"]{text-decoration:none;}
+a i.icon-fixed-width[class*="icon-"],
+a:hover i.icon-fixed-width[class*="icon-"]{text-align:left;}
+
+// Emphasis & misc
+// -------------------------
+th{	
+	color: $headingsColor;
+}
+.table th,
+strong{	
+	font-weight: $eFontWeightBold;
+}
+small {
+	font-size: 0.846em;
+	line-height:1.3;
+	color: $textColorMuted;
+}
+
+// Utility classes
+.text-branded {
+  color: $brandColor;
+}
+
+
+// Lists
+// --------------------------------------------------
+// Unordered and Ordered lists
+
+ul, ol {
+	margin: $baseLineHeight 0 $baseLineHeight $baseFontSize * 2;
+}
+h1 + ul, h1 + ol,
+h2 + ul, h2 + ol,
+h3 + ul, h3 + ol,
+h4 + ul, h4 + ol,
+h5 + ul, h5 + ol,
+h6 + ul, h6 + ol{
+	margin-top: 0;
+}
+
+
+ul > li,
+ol > li {
+	margin:0 0 $baseLineHeight / 3 0;
+}
+
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+	margin-top: 0;
+	margin-bottom: $baseLineHeight / 2;
+}
+ul.unstyled,
+ul.unstyled > li,
+ol.unstyled,
+ol.unstyled > li{
+	margin:0;
+}
+
+
+
+// Description Lists
+dl {
+  margin-top: 0;
+}
+// Horizontal layout (like forms)
+.dl-horizontal dt,
+.dl-horizontal dd{
+	min-height: $baseLineHeight;
+}
+
+// MISC
+// ----
+
+// Horizontal rules
+hr {
+  margin: $baseLineHeight * 1.5 0;
+  border-top: 1px solid $hrBorder;
+  border-bottom: 1px solid $contentBackgroundColor;
+}
+hr.mega {
+	margin-right: - $eResponsiveBodyPadding * 1;
+	margin-left: - $eResponsiveBodyPadding * 1;
+	@media (min-width: 768px){
+		width: $gridColumnWidth768 * 12 + $gridGutterWidth768 * 13;
+		margin-right: - $gridGutterWidth * 1;
+		margin-left: - $gridGutterWidth * 1;
+	}
+	@media (min-width: 980px) {
+		width: $gridColumnWidth * 12 + $gridGutterWidth * 13;
+		margin-right: - $gridGutterWidth * 1;
+		margin-left: - $gridGutterWidth * 1;
+	}
+	@media (min-width: 1240px) {
+		width: $gridColumnWidth * 12 + $gridGutterWidth * 17;
+		margin-right: - $gridGutterWidth * 3;
+		margin-left: - $gridGutterWidth * 3;
+	}
+	@media (min-width: 1320px) {
+		width: $gridColumnWidth * 12 + $gridGutterWidth * 19;
+		margin-right: - $gridGutterWidth * 4;
+		margin-left: - $gridGutterWidth * 4;
+	}
+	@media (min-width: 1640px) {
+		width: $gridColumnWidth * 12 + $gridGutterWidth * 21;
+		margin-right: - $gridGutterWidth * 5;
+		margin-left: - $gridGutterWidth * 5;
+	}
+}
+
+// Blockquotes
+blockquote { 
+	margin-top:0;
+	margin-bottom:$baseLineHeight * 0.5;
+	padding-left:0;
+	padding-right:0;
+	border:0;
+}
+blockquote, 
+blockquote p{ 
+	font-weight:200;
+	font-style: italic;
+	font-family: $serifFontFamily;
+	font-size: ceil($baseFontSize * 1.5);
+	line-height: 1.5;
+	color:$textColorMuted;
+}
+blockquote small{ 
+	display:inline-block;
+	font-family: $sansFontFamily;
+	margin-top:$baseLineHeight;
+	font-style: normal;
+}

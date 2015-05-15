@@ -1,0 +1,39 @@
+.e-bottom { 
+	font-size: $baseFontSize * 0.846;
+	line-height: $baseLineHeight * 0.846;
+	padding-top:$baseLineHeight;
+	color: $textColorMuted;
+	background: $baseBackgroundColor;
+	border-top: 1px solid rgba(0,0,0,0.05);
+}
+.e-bottom a{
+	color:$textColorMuted;
+	text-decoration:underline;
+}
+.e-bottom a:hover{
+	text-decoration:none;
+}
+.e-bottom h1,
+.e-bottom h2,
+.e-bottom h3,
+.e-bottom h4{
+	color: $headingsColorMuted;
+}
+.e-bottom h1 a,
+.e-bottom h2 a,
+.e-bottom h3 a,
+.e-bottom h4 a{
+	color: $headingsColorMuted;
+	text-decoration:none;
+}
+.e-bottom h1 a:hover,
+.e-bottom h2 a:hover,
+.e-bottom h3 a:hover,
+.e-bottom h4 a:hover{
+	text-decoration:underline;
+}
+@media (max-width: 767px) {
+	.e-bottom {
+		@include border-radius(0); 
+	}
+}

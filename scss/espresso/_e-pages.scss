@@ -1,0 +1,56 @@
+//Fjern topmargin på første overskrifts-element på alle sider så de bliver hængende på tørresnoren
+.e-top > .row:first-child > [class*="span"] > .pidlink,
+.e-content > .row > [class*="span"] > .row:first-child > [class*="span"] > .pidlink{
+	+ h1,
+	+ h2,
+	+ h3,
+	+ h4{
+		margin-top:0;
+	}	
+}
+
+//linjer og padding i toppen af alle contentareas på sider med mere end ét contentarea 
+.e-column{
+	border-top:1px solid $navLeftBorderColor;
+	padding-top:floor($baseFontSize * 0.846);
+}
+//fjern top margin på første overskrift i disse contentareas de to kolonner holder overkant
+.e-column > .row:first-child > [class*="span"] > .pidlink + h1,
+.e-column > .row:first-child > [class*="span"] > .pidlink + h2,
+.e-column > .row:first-child > [class*="span"] > .pidlink + h3,
+.e-column > .row:first-child > [class*="span"] > .pidlink + h4{
+	margin-top:0;
+}
+
+/* temp til fk for at få en special forside*/
+.e-wrapper .container.e-transparent{
+	background:none;
+}
+.e-wrapper .container.e-transparent .featured{
+	margin-left:0;
+}
+.e-wrapper .container.e-transparent .featured > .row > [class*="span"]{
+	background:rgba($contentBackgroundColor,.85);
+	padding:20px;
+	@include box-sizing(border-box);
+	@include border-radius($boxBorderRadius);
+}
+.e-wrapper .container.e-transparent .featured > .row > [class*="span"] .e-img{
+	margin:-12px -12px 0;
+}
+@media (max-width: 767px) {
+	.e-wrapper .container.e-transparent {
+		padding:0;
+	}
+	.e-wrapper .container.e-transparent .featured{
+		margin-top:0;
+		padding:0;
+		@include border-radius(0);
+	}
+	.e-wrapper .container.e-transparent .row{
+		margin:$fluidGridGutterWidth;
+	}
+	.e-wrapper .container.e-transparent .featured > .row > [class*="span"]{
+		background:rgba($contentBackgroundColor,.45);
+	}
+}

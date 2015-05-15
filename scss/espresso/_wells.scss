@@ -1,0 +1,28 @@
+//
+// Wells
+// --------------------------------------------------
+
+
+// Base class
+.well {
+	min-height: $baseLineHeight;
+	padding: $baseLineHeight $gridGutterWidth;
+	margin-bottom: $baseLineHeight;
+	background-color: $wellBackgroundColor;
+	border-color: $wellBorderColor;
+	@include border-radius($boxBorderRadius);
+	@include box-shadow(none);
+}
+
+// Sizes
+.well-large {
+	padding: $baseLineHeight * 1.5 $gridGutterWidth * 1.5;
+	@include border-radius($boxBorderRadius * 1.5);
+}
+.well-small {
+	padding: $baseLineHeight * 0.5 $gridGutterWidth * 0.5;
+	@include border-radius($boxBorderRadius * 0.5);
+}
+.well-transparent {
+	background-color: tranparent;
+}

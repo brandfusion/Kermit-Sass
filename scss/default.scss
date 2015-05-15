@@ -1,0 +1,34 @@
+
+// Import Espresso variables to define defaults and overwrite default bootstrap variables
+@import "bootstrap/variables";
+// @import "espresso/variables";
+@import "custom/variables";
+
+// Bootstrap 
+@import "_bootstrap.scss"; 
+
+// Plugins 
+@import "plugins/blueimp-gallery"; 
+@import "plugins/blueimp-gallery-indicator"; 
+@import "perfect-scrollbar";
+
+// Espresso
+// @import "espresso/espresso"; 
+
+// Custom styling
+@import "custom/custom";
+
+//Owl Carousel 2
+@import "_owl-carousel.scss";
+
+// Style
+@import "style/_variables.scss"; 
+@import "style/_buttons.scss";
+@import "style/_general.scss"; 
+@import "style/_header.scss"; 
+@import "style/_footer.scss"; 
+@import "style/_kendo-custom.scss";
+@import "style/_products-page.scss";
+@import "style/_cart-page.scss";
+@import "style/_reports-page.scss";
+@import "style/_claims.scss";

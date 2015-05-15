@@ -1,0 +1,515 @@
+$table-accent: $color-green-light;
+.vendor-has-popup {
+    color: #000;
+    text-decoration: underline;
+    cursor: pointer;    
+    &:hover {
+        color: $color-blue;
+    }
+}
+.view-product {
+	@extend .vendor-has-popup;
+	text-align: center;
+	display: block;
+}
+
+.k-header > .k-grid-filter, .k-header > .k-header-column-menu {
+	position: absolute;
+	right: 15px;
+	top: 50%;
+	padding: 0px;
+}
+
+/* Table Styles */
+.k-filter-menu .scroll-wrapper .k-listview {
+    box-shadow: none;
+}
+
+.k-grid {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: none;
+}
+
+.all-ecom-tables {
+    border-radius: 0px;
+	// border: 1px solid #f3f3f3;
+    border: 1px solid #ddd;
+	box-shadow: 0px 0px 8px #ddd;
+	margin-bottom: 30px;
+
+    table {
+        table-layout: fixed;
+    }
+
+    table thead {
+        border-color: $table-accent;
+        
+        th.k-header {
+            background-color: $table-accent;
+			border: none;
+			font-weight: 600;
+			text-align: left;
+			color: #fff;
+			position: relative;
+			padding: 5px 10px;
+            border-right: 1px solid #10a341;
+            text-align: center;
+		    
+
+            a, .k-link{
+                color: #fff;
+                font-size: 13px;
+            }
+
+            > .k-link {
+                display: inline;
+            }
+
+            .k-grid-filter.k-state-border-down {
+                color: #fff600;
+            }
+            .k-grid-filter.k-state-active {
+                background-color: inherit;
+                border: none;
+                box-shadow: none;
+            }
+
+        }
+        th.week-control-arrow.k-header {
+            padding: 0px;
+            width: 12px;           
+        }
+        th.week-column {
+            cursor: pointer;
+            width: 80px;            
+
+            span {
+                display: block;
+                width: 100%;
+            }
+        }
+        th.numeric-column {
+            text-align: right;
+            padding-right: 15px;
+        }
+        th.k-header.selected {
+            background-color: darken($table-accent, 10%);
+        }
+    }
+
+    table tr:nth-of-type(even) {
+        background-color: #f0ffeb;
+        background-color: #f9f9f9;
+
+        td.selected {
+            background-color: #e8f5d9;
+        }
+    }
+
+    table { 
+
+        td  {
+            padding: 4px;
+     		vertical-align: middle;
+        	border: none;
+        	border-bottom: solid 1px #f3f3f3;
+        	font-size: 13px; 
+            outline: none;           
+        }        
+        td.one-week {
+            width: 336px;
+        }
+        td.three-week {
+            width: 252px;
+        }
+        
+    }
+
+    table td.selected {
+        background-color: #efefef;
+    }
+
+    table td.numeric-data {
+        text-align: right;
+        padding-right: 15px;
+    }
+
+    table td input {
+        width: 80%;
+        text-align: right;
+        &[type="text"] {
+            padding-right: 10px;
+        }
+    }
+    table td .availability-input input {
+    	width: 75px;
+    }
+
+}
+
+.k-filter-menu-sorting a {
+    display: block;
+    text-decoration: none;
+    color: black;
+
+    i {
+        padding-right: .5em;
+    }
+}
+
+.k-pager-wrap {
+    background: #fff;
+    border-top: 1px solid #aaa;
+
+
+    .k-link {
+        border-color: $color-dark-gray;
+        border: none;
+        // border-color: #3d90c7;
+		border-radius: 0px;
+		border:1px solid #fff;
+		color: $color-dark-gray;	
+		transition: all 0.2s ease-in;	
+		
+		&:hover {
+			color: $color-dark-gray;
+			border: 1px solid #333;
+			box-shadow: 0px 0px 3px #aaa;
+			border-radius: 0px;
+		}
+
+        &:hover:not(.k-state-disabled) {
+            background-color: #fff;
+            border-color: $color-dark-gray;
+            color: #000;
+            box-shadow: 0px 0px 3px #aaa;
+        }
+        &.k-state-disabled {
+        	color: #aaa;
+        	border-color: #fff;
+        }
+        
+
+        // &.k-pager-last {
+        // 	border-right: none;
+        // 	&:hover {
+        // 		border-radius: 0px;
+        // 		border: 1px solid $color-dark-gray;
+        // 	}
+            
+            
+        // }
+        &.k-pager-last {
+        	border-radius: 0px;
+        	border: 1px solid #fff;
+        }
+        &.k-state-disabled:hover {
+            border-color: #fff;
+            box-shadow: none;
+        }
+    }
+
+    .k-pager-numbers .k-state-selected {
+        line-height: 2;
+        background-color: #fff;
+        border: 1px solid $color-dark-gray;        
+        box-shadow: 0px 0px 3px #aaa;
+        color: #333;
+
+    }
+}
+
+.add-products table, .myorders table, .view-cart table {
+    font-size: 14px;
+}
+
+.k-group {
+    background-color: #fff;
+    &.k-popup {
+        color: black;
+    }
+}
+
+
+
+/* PRODUCTS PAGE */
+
+.availability-upper, .availability-soldout, .availability-input {
+	width: 100%;
+	display: block;
+	float: left;
+	text-align: right;	
+}
+.availability-upper {
+	line-height: 26px;
+	color: #aaa;
+	font-weight: 400;
+	font-size: 14px;
+	font-family: 'Open Sans';
+	margin-right: 15px;
+	float: right;		
+}
+.availability-input {
+	input {
+		width: 50%;
+		border: 1px solid #aaa;
+		font-weight: 600;
+		color: #000;
+	}
+}
+.numeric-data {
+	font-weight: 600;
+	.product-pricing-data {
+		padding-top: 28px;
+		display: block;
+	}
+}
+.soldout {
+	float: right;
+	color: #aaa;
+	padding-top: 28px;
+	padding-right: 15px;
+}
+.week-column {
+	p {
+		width: 100%;
+		margin: 0px;
+		font-size: 13px;
+		text-align: center;
+	}
+	a {
+		
+
+	}
+	.fa-chevron-left {		
+		position: absolute;
+		color: white;	
+		font-size: 10px;		
+		height: 100%;
+		width: 10px;
+		display: block;		
+		background-color: $color-green-primary;
+		margin: 0px;
+		padding: 0px;
+		top: 0px;
+		left: 0px;
+		padding-top: 20px;
+		padding-left: 2px;
+	}
+	.fa-chevron-right {		
+		position: absolute;
+		color: white;	
+		font-size: 10px;		
+		height: 100%;
+		width: 10px;
+		display: block;		
+		background-color: $color-green-primary;
+		margin: 0px;
+		padding: 0px;
+		top: 0px;
+		right: 0px;
+		padding-top: 20px;
+		padding-left: 2px;
+	}
+}
+.k-grid-header th > .k-link > .k-icon {
+	color: $color-yellow;
+	color: $color-green-primary;
+	position: absolute;
+	right: 25px;
+	top: 22px;
+}
+
+/* ORDERS PAGE */
+
+.orders-grid td {
+	text-align: center;
+}
+.order-week, .order-number {
+	font-weight: 600;
+}
+.my-orders-grid {
+    table {
+        td {
+            // padding-right: 45px;
+            &.orders-vendor {
+                // text-align: left;
+                // padding: 0px;
+            }
+            &.orders-view-product {
+                padding: 0px;
+            }
+            &.numeric-data {
+                padding-right: 35px;
+                text-align: right;
+            }
+        }
+        tr.in-cart td {
+            border-top: 1px solid #fc9e17;
+            border-bottom: 1px solid #fc9e17;
+            &:first-child {
+                border-left: 1px solid #fc9e17;
+            }
+            &:last-child {
+                border-right: 1px solid #fc9e17;
+            }
+        }
+    }
+    
+
+}
+
+.all-ecom-tables table thead th.k-header[data-title="Value"] {
+    text-align: right;
+    padding-right: 35px;
+}
+.all-ecom-tables table thead th.week-column {
+    transition: all 0.2s ease-in;
+    &:hover {
+        background-color: #10a341;
+        background-color: #0b793a;
+    }
+}
+.k-grid-content {
+    overflow-y: hidden;
+}
+.fa-camera:hover {
+    color: $color-blue;
+    cursor: pointer;
+}
+
+
+
+// table.myorders > tbody > tr.in-cart {
+//     border: 2px solid #fc9e17;
+// }
+// table.myorders tr.in-cart td:last-child {
+//     background-color: #fc9e17;
+// }
+// table.myorders tr.in-cart td:last-child .fa {
+//     display: block;
+//     color: white;
+// }
+
+.k-grid {
+    .fa-info-circle {
+        color: #ee6d00;
+    }
+}
+
+.all-ecom-tables table td.quantity-highlighted {
+    background-color: #d8eac4;
+    background-color: #D1F0C3;
+    .availability-input input {
+        border-color: #13ac46;
+    }
+}
+
+.all-ecom-tables table thead th.k-header.one-week {
+     // width: 502px;
+           
+}
+.all-ecom-tables table thead th.k-header.three-weeks {
+    // width: 334px;
+}
+
+// th.one-week {
+//             width: 502px;
+//         }
+//         th.three-week {
+//             width: 514px;
+//         }
+.all-ecom-tables table td.one-week {
+    // width: 502px;
+}
+.all-ecom-tables table td.three-weeks {
+     // width: 334px;
+}
+.all-ecom-tables table td.week-control-td {
+    width: 12px;
+}
+.k-grid-header-wrap {
+    table {
+        background-color: #13ac46;
+    }
+}
+.all-ecom-tables.product-grid-custom {
+    table {
+       table-layout: auto;
+       td {
+        width: auto;
+       }
+       thead th.week-control-arrow.k-header {
+            width: 2%;
+        // width: 100%;
+       }
+       thead th.k-header {
+            padding: 4px;
+            
+       }
+       
+       .week-control-td {
+            width: 12px;
+            width: 2%;
+       }
+       .grid-description {
+            // width: 211px;
+            width: 20%;    
+            &.three-weeks {
+                width: 29%;
+            }
+            &.one-week {
+                width:47%;
+            }    
+       }
+       .grid-vendor {
+        // width: 145px;
+        width: 10%;
+            &.three-weeks {
+                width: 19%;
+            }
+            &.one-week {
+                width:19%;
+            } 
+       }
+       th[data-field="Name"] {
+        width: 22px;       
+       }  
+       .add-products-icon {
+            width: 38px;
+            padding: 0px;
+            // border-right: 1px solid #fff;
+       }
+       .form-column {
+            width: 8%;
+       }
+       .price-column {
+            width: 10%;
+       }
+       thead th.week-column {
+            width: 9%;
+       }
+    }
+    .k-grid-content {
+        .grid-description {              
+            border-right: 1px solid #fff;
+       }    
+    }
+}
+
+.k-tooltip-content {
+    a {
+        @extend .button-border; 
+        border-color: $color-green-primary;
+    }
+    .vendor-logo-center {
+        margin-top: 0px;
+    }
+}
+
+//reset
+
+div.k-grid-header, div.k-grid-footer {
+    padding-right : 0px;
+}

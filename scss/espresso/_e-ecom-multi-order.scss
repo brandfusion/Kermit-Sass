@@ -1,0 +1,11 @@
+.e-multi-order th{
+	white-space: nowrap;
+}
+.e-multi-order tbody input{
+	margin-top: - (floor($baseLineHeight / 8));
+	padding-top: (floor($baseLineHeight / 8)) - 1;
+	padding-bottom: (floor($baseLineHeight / 8)) - 1;
+	margin-bottom: 0;
+}
+
+

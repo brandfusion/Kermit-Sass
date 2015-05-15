@@ -1,0 +1,97 @@
+/* Espresso navigation > local > left */
+$eNavLocalLeftFontSize	:	ceil($baseFontSize * 0.846);
+
+.e-nav-local-left{}
+.e-nav-local-left.affix{
+	top:$baseLineHeight / 2;
+}
+@media (min-width: 768px){
+	.e-nav-local-left.affix{
+		width:166px;
+	}
+}
+@media (min-width: 980px) {
+	.e-nav-local-left.affix{
+		width:220px;
+	}
+}
+.e-nav-local-left.affix-bottom{
+	top:auto;
+	bottom:$baseLineHeight;
+	position:absolute;
+}
+// Alle niveauer
+.e-nav-local-left .nav{}
+.e-nav-local-left .nav li{
+}
+.e-nav-local-left .nav li a{
+	font-size: $eNavLocalLeftFontSize;
+	color:$navLeftLinkColor;
+	line-height:1.2;
+	padding-top:0.8em;
+	padding-bottom:0.8em;
+	padding-right: $gridGutterWidth * 0.25;
+	@include border-radius(2px);
+}
+.e-nav-local-left .nav li a:hover{
+	color:$navLeftLinkColorHover;
+	background-color:$navLeftBackgroundHover;
+}
+.e-nav-local-left .nav li.inpath > a{
+	font-weight:bold;
+	color:$navLeftLinkColorInpath;
+}
+.e-nav-local-left .nav li.inpath:not(.active) > a:hover{
+	color:darken($navLeftLinkColorInpath, 15%);
+}
+.e-nav-local-left .nav li.active > a{
+	color:$navLeftLinkColorActive;
+	background-color:$navLeftBackgroundActive;
+}
+.e-nav-local-left .nav .divider {
+	height:1px;
+	overflow:hidden;
+	margin:0.5em 0;
+	background-color:darken($navLeftBorderColor, 10%);
+}
+// Niveau #1
+.e-nav-local-left > .nav{}
+.e-nav-local-left > .nav > li{
+	border-top:1px solid $navLeftBorderColor;
+}
+.e-nav-local-left > .nav > li:last-child{
+	border-bottom:1px solid $navLeftBorderColor;
+}
+.e-nav-local-left > .nav > li.active{
+	border-top-color:transparent;
+}
+.e-nav-local-left > .nav > li.active:first-child{
+	border-top:0;
+}
+.e-nav-local-left > .nav > li.active:last-child{
+	border-bottom:0;
+}
+.e-nav-local-left > .nav > li.active:not(.has-children) + li{
+	border-top-color:transparent;
+}
+.e-nav-local-left > .nav > li > a{
+	padding-left: $gridGutterWidth * 0.5;
+}
+// Niveau #2
+.e-nav-local-left > .nav > li > .nav{margin-left:$gridGutterWidth;padding-bottom:0.4em;margin-bottom:1px;}
+.e-nav-local-left > .nav > li > .nav > li > a{
+	margin-left:- $gridGutterWidth ; 
+	padding-left:$gridGutterWidth * 1.5;
+}
+// Niveau #3
+.e-nav-local-left > .nav > li > .nav > li > .nav{margin-left:$gridGutterWidth;padding-bottom:0.4em;margin-bottom:1px;}
+.e-nav-local-left > .nav > li > .nav > li > .nav > li > a{
+	margin-left:- $gridGutterWidth * 2 ; 
+	padding-left:$gridGutterWidth * 2.5;
+}// Niveau #3
+.e-nav-local-left > .nav > li > .nav > li > .nav > li > .nav{margin-left:$gridGutterWidth;padding-bottom:0.4em;margin-bottom:1px;}
+.e-nav-local-left > .nav > li > .nav > li > .nav > li > .nav > li > a{
+	font-size:0.846em;
+	margin-left:- $gridGutterWidth * 3 ; 
+	padding-left:$gridGutterWidth * 3.5;
+}

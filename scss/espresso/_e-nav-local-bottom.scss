@@ -1,0 +1,29 @@
+/* Espresso navigation > local > bottom/footer (visible-phone)*/
+.e-nav-local-bottom{ background:$contentBackgroundColor; }
+.e-nav-local-bottom p{
+	text-transform:uppercase;
+	padding-left:$gridGutterWidth / 1.5;
+	margin:0;
+}
+// Niveau #1
+.e-nav-local-bottom > .row > .span12 > .nav{
+	margin-bottom:$baseLineHeight;
+}
+// Niveau #2
+.e-nav-local-bottom > .row > .span12 > .nav > li > .nav{margin-left:$gridGutterWidth;}
+.e-nav-local-bottom > .row > .span12 > .nav > li > .nav > li > a{
+	margin-left:- $gridGutterWidth * 1; 
+	padding-left:$gridGutterWidth * 1.5;
+}
+// Niveau #3
+.e-nav-local-bottom > .row > .span12 > .nav > li > .nav > li > .nav{margin-left:$gridGutterWidth;}
+.e-nav-local-bottom > .row > .span12 > .nav > li > .nav > li > .nav > li > a{
+	margin-left:- $gridGutterWidth * 2 ; 
+	padding-left:$gridGutterWidth * 2.5;
+}
+// Niveau #3
+.e-nav-local-bottom > .row > .span12 > .nav > li > .nav > li > .nav{margin-left:$gridGutterWidth;}
+.e-nav-local-bottom > .row > .span12 > .nav > li > .nav > li > .nav > li > a{
+	margin-left:- $gridGutterWidth * 3 ; 
+	padding-left:$gridGutterWidth * 3.5;
+}

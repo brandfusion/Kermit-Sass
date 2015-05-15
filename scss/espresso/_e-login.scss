@@ -1,0 +1,31 @@
+.e-login .row-fluid div[class^="span"]:first-child{
+	border-right:1px solid $baseRuleColor
+}
+.e-login .row-fluid div[class^="span"]:last-child{
+	padding-top:$baseLineHeight + 1
+}
+.e-login .well .form-actions{ 
+	margin-top:0;
+}
+.e-login .well .form-actions + p{ 
+	margin-top:$baseLineHeight * 2;
+	margin-bottom:0;
+}
+
+@media (max-width: 767px) {
+	.e-login {
+	}
+}
+@media (max-width: 480px) {
+	.e-login{
+	}
+}
+
+//modal specifikke styles
+.e-login.modal{width:880px; margin-left:-440px;}
+.e-login.modal .modal-body {
+	max-height:560px;
+}
+.e-login.modal .modal-body div:first-child .row-fluid {
+	margin-top:$baseLineHeight * 2;
+}

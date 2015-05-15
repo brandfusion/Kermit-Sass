@@ -1,0 +1,67 @@
+.e-search-form{
+	margin: 0;
+}
+.navbar .e-search-form{
+	margin-top: ( $navbarHeight - $inputHeight - 1 ) / 2;
+	width: 220px;
+	float: right;
+}
+@media (max-width: 980px) {
+	.navbar .e-search-form{
+		width: 45%;
+		float: left;
+	}
+}
+.e-search-form .e-search-box{
+	position: relative;
+	height: $inputHeight - 1;
+	@include border-radius($baseBorderRadius);
+    background: $inputBackground;	
+}
+.e-search-form .e-search-box input[type="text"] {
+	position:absolute;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	z-index:2;
+	width:100%;
+	height:100%;
+	margin:0;
+	border:1px solid $inputBorder;
+	background:none;
+	@include border-radius($baseBorderRadius);
+	@include box-sizing(border-box);
+	@include box-shadow(#{none});
+}
+.e-search-form .e-search-box button.pull-left + input[type="text"] {
+	padding-left: 11%;
+}
+.e-search-form .e-search-box button { 
+	margin:1px;
+	padding-top:3px;
+	padding-bottom:4px;
+	padding-left:3%;
+	padding-right:3%;
+	position:absolute;
+	right:0;
+	z-index:3;
+	border:0;
+	@include border-radius(0 $baseBorderRadius $baseBorderRadius 0);
+	border-left:1px solid $inputBorder;
+}
+.e-search-form .e-search-box button.pull-left { 
+	right:auto;
+	left:0;
+	@include border-radius($baseBorderRadius 0 0 $baseBorderRadius);
+	border-right:1px solid $inputBorder;
+}
+.e-search-form .e-search-box button.icon{ 
+	border:0;
+	background:none;
+	@include box-shadow(#{none});
+}
+.e-search-form .e-search-box button.icon.pull-left { 
+	padding-right:0;
+	z-index:1;
+}

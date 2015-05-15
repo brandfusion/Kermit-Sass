@@ -1,0 +1,490 @@
+// Common slider styles shared 
+// -------------------------
+.carousel{ 
+	z-index: 1;
+	margin-bottom: 0;
+}
+.carousel .item img{
+	min-width: 100%;
+}
+.carousel .item .e-gallery-item{
+	display:none;
+}
+//Captions for text and other funky stuff
+.carousel .carousel-caption {
+	background: $navbarInverseBackground;
+	background: rgba($black,.75);
+	color: $grayLighter;
+}
+.carousel .carousel-caption.black {
+	//standard
+}
+.carousel .carousel-caption.transparent {
+	color: $textColor;
+	background: none;
+}
+.carousel .carousel-caption h1,
+.carousel .carousel-caption h2,
+.carousel .carousel-caption h3,
+.carousel .carousel-caption h4,
+.carousel .carousel-caption p{
+	color: inherit;
+}
+.carousel .carousel-caption p:last-child{ 	
+	margin-bottom: 0; 
+}
+.carousel .carousel-caption p a{
+	white-space: nowrap;
+	padding: 0.375em 1.25em;
+	display: inline-block;
+}
+.carousel .carousel-caption p a:not(.btn){
+	color: inherit;
+	text-decoration: underline;
+}
+.carousel .carousel-caption p a:not(.btn):hover{
+	text-decoration: none;
+}
+
+.carousel .carousel-control {
+	font-size: $baseFontSize * 3;
+	height: 1em;
+	width: 1em;
+	margin: -0.5em 0 0;
+	border-color: $white;
+	border-width: 2px;
+	background: $grayDarker;
+	@include opacity(100);
+	@include border-radius(50%);
+    @include box-shadow(0 2px 2px rgba(0, 0, 0, 0.25));
+	@media (max-width: 767px) {
+		font-size: $baseFontSize * 2;
+		top: $baseLineHeight / 2;
+		bottom: auto;
+		margin: 0;
+	}
+}
+.carousel .carousel-control.right { 
+	right:$baseFontSize;
+	@media (max-width: 767px) {
+		right: 0;
+	}
+}
+.carousel .carousel-control.left { 
+	left: $baseFontSize;
+	@media (max-width: 767px) {
+		left: auto;
+		right: 1.25em;
+	}
+}
+.carousel .carousel-control i{
+	margin-top: -0.525em;
+	font-size: 1em;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	right: 0;
+	line-height: 1;
+	font-weight: $eFontWeightLight;
+}
+.carousel .carousel-control.right i{ 
+	margin-left: 0.0846em;
+}
+.carousel .carousel-control.left i{ 
+	margin-right: 0.0846em;
+}
+
+
+// Espresso image slider
+// -------------------------
+.e-carousel-image .item .e-gallery-item {
+	position:absolute;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	text-align:center;
+	text-decoration:none;
+	display:block;
+	cursor: zoom-in; 
+	cursor: -moz-zoom-in;
+	cursor: -webkit-zoom-in;
+}
+.e-carousel-image .item .e-gallery-item i{
+    color: $white;
+    display: none;
+    font-size: 4em;
+    height: 1em;
+    left: 50%;
+    margin-left: -0.625em;
+    margin-top: -1em;
+    position: absolute;
+    right: 50%;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.65);
+    top: 50%;
+    width: 1em;
+}
+.e-carousel-image .item .e-gallery-item:hover i{
+	//display:block;
+}
+.e-carousel-image .carousel-caption {
+	padding:$baseFontSize 0.846em;
+}
+.e-carousel-image .carousel-caption p,
+.e-carousel-image .carousel-caption .lead{ 	
+	font-size: ceil($baseFontSize * 0.846);
+	font-weight: $eFontWeightNormal;
+	line-height: 1.2;
+	margin-bottom: $baseLineHeight / 3; 
+}
+.e-carousel-image .carousel-caption h1,
+.e-carousel-image .carousel-caption h2,
+.e-carousel-image .carousel-caption h3,
+.e-carousel-image .carousel-caption h4{ 	
+	font-size: $baseFontSize;
+	font-weight: $eFontWeightBold;
+	margin: 0 0 $baseLineHeight / 3; 
+}
+// Image indicator navigation
+.e-carousel-image .carousel-indicators {
+	display:none;
+	left:0;
+	right:0;
+	text-align:center;
+}
+.e-carousel-image .carousel-indicators li{
+	float:none;
+	display:inline-block;
+	background: rgba($brandColor,0.45);
+	border: 1px solid rgba(0,0,0,0.10);
+	overflow:hidden;
+}
+.e-carousel-image .carousel-indicators li.active{
+	background: $brandColor;
+}
+//Nice responsiveness
+.span12 > .e-carousel-image  {
+	width: auto;
+	margin-left: -$gridGutterWidth;
+	margin-right: -$gridGutterWidth;
+    @media (min-width: 1240px) {
+        margin-left: -$gridGutterWidth * 3;
+        margin-right: -$gridGutterWidth * 3;
+    }
+    @media (min-width: 1320px) {
+        margin-left: -$gridGutterWidth * 4;
+        margin-right: -$gridGutterWidth * 4;
+    }
+    @media (min-width: 1640px) {
+        margin-left: -$gridGutterWidth * 5;
+        margin-right: -$gridGutterWidth * 5;
+    }
+}
+.span12 > .e-carousel-image .item img{
+	@include border-radius(0);
+}
+.span12 > .e-carousel-image .item .carousel-caption{
+	@include border-radius(0);
+}
+@media (max-width: 767px) {
+	.e-carousel-image {
+        margin-left: -$eResponsiveBodyPadding;
+        margin-right: -$eResponsiveBodyPadding;
+    }
+	.e-carousel-image .carousel-control { 
+		top:$baseLineHeight;
+		margin-top:0;
+	}
+}
+
+
+// Espresso content slider
+// -------------------------
+.e-carousel-content .carousel-inner {
+	border-bottom: ceil($baseLineHeight / 5) solid $navbarInverseBackground;
+}
+.e-carousel-content .carousel-inner:after{
+	content:'';
+	height:1px;
+	@include box-shadow(inset 0 1px 0 $navbarInverseBorder,0 -2px 2px rgba(0, 0, 0, 0.25));
+	position:absolute;bottom:0;left:0;right:0;
+}
+.e-carousel-content .carousel-control {
+	display:none;
+}
+
+// Caption for text on top of images
+// -----------------------------
+.e-carousel-content .carousel-caption {
+	@media (min-width: 768px) {
+		left: 1.5em;
+		right: auto;
+		top: 8%;
+		bottom:auto;
+		width: 23em;
+		padding: 1.5em  1.85em 1.85em;
+		overflow: hidden;
+	}
+}
+.e-carousel-content .carousel-caption h1,
+.e-carousel-content .carousel-caption h2,
+.e-carousel-content .carousel-caption h3,
+.e-carousel-content .carousel-caption h4,
+.e-carousel-content .carousel-caption p,
+.e-carousel-content .carousel-caption p a:not(.btn){
+	color: $grayLighter;
+}
+.e-carousel-content .carousel-caption p{
+	line-height:1.4;
+	margin-bottom: .75em; 
+}
+.e-carousel-content .carousel-caption h1,
+.e-carousel-content .carousel-caption h2,
+.e-carousel-content .carousel-caption h3,
+.e-carousel-content .carousel-caption h4{
+	margin: 0 0 .25em; 
+}
+//responsive captions - START
+.e-carousel-content .carousel-caption h1 {
+	font-size: 3em;
+}
+.e-carousel-content .carousel-caption h2 {
+	font-size: 1.75em;
+}
+.e-carousel-content .carousel-caption h3 {
+	font-size: 1.05em;
+}
+.e-carousel-content .carousel-caption h4 {
+	font-size: 1.05em;
+}
+.e-carousel-content .carousel-caption .lead{
+	font-size: 1.5em;
+}
+.e-carousel-content .carousel-caption p,
+.e-carousel-content .carousel-caption .btn,
+.e-carousel-content .carousel-caption ul,
+.e-carousel-content .carousel-caption ol, 
+.e-carousel-content .carousel-caption li{
+	font-size: 1em;
+	line-height:1.5;
+}
+//responsive captions - START
+.e-carousel-content .carousel-caption.transparent {
+	@media (min-width: 768px) {
+		overflow: visible;
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+.e-carousel-content .carousel-caption.transparent h1,
+.e-carousel-content .carousel-caption.transparent h2,
+.e-carousel-content .carousel-caption.transparent h3,
+.e-carousel-content .carousel-caption.transparent h4,
+.e-carousel-content .carousel-caption.transparent p,
+.e-carousel-content .carousel-caption.transparent p a:not(.btn){
+	color: $textColor;
+}
+.e-carousel-content .carousel-caption.left {
+	//styles er de samme som standard
+}
+.e-carousel-content .carousel-caption.right {
+	right:  1.5em;
+	left: auto;
+}
+.e-carousel-content .carousel-caption.top {
+	//styles er de samme som standard
+}
+.e-carousel-content .carousel-caption.bottom {
+	bottom:8%;
+	top:auto;
+}
+// Carousel navigation
+.e-carousel-content .carousel-indicators {
+	position: static;
+	overflow: hidden;
+}
+.e-carousel-content .carousel-indicators li{
+	color: $textColorMuted;
+	font-size: ceil($baseFontSize * 0.846);
+	width: 25%;
+	cursor: pointer;
+	text-indent: 0;
+	line-height: $baseFontSize;
+	height: ( $baseFontSize * 2 ) + ( $baseLineHeight / 3 ) + ( $baseLineHeight / 2 );
+	padding-top: $baseLineHeight / 3;
+	padding-right: $gridGutterWidth * .846;
+	padding-bottom: $baseLineHeight / 2;
+	padding-left: $gridGutterWidth * .846;
+	margin: 0;
+	border: 1px solid $baseBorderColor;
+	border-width: 0 1px 1px 0;
+    border-radius: 0;
+    background-color: $baseBackgroundColor;
+	@include box-sizing(border-box);
+}
+.e-carousel-content .carousel-indicators li:first-child{   
+	border-radius: 0 0 0 $boxBorderRadius;
+	border-left-width: 1px;
+ }
+.e-carousel-content .carousel-indicators li:last-child{
+	border-radius: 0 0 $boxBorderRadius 0;
+}
+.e-carousel-content .carousel-indicators li:hover {
+    border-color: darken($baseBorderColor, 5%);
+    background-color: darken($baseBackgroundColor, 5%);
+}
+.e-carousel-content .carousel-indicators li.active,
+.e-carousel-content .carousel-indicators li.active:hover{
+    color: $navbarInverseLinkColorActive;
+	border-color: $navbarInverseBackground;
+    background-color: $navbarInverseBackground;
+}
+//Nice responsiveness
+.span12 > .e-carousel-content .carousel-inner  {
+	width: auto;
+	margin-left: -$gridGutterWidth;
+	margin-right: -$gridGutterWidth;
+	@media (max-width: 767px) {
+        margin-left: -$eResponsiveBodyPadding;
+        margin-right: -$eResponsiveBodyPadding;
+    }
+    @media (min-width: 1240px) {
+        margin-left: -$gridGutterWidth * 3;
+        margin-right: -$gridGutterWidth * 3;
+    }
+    @media (min-width: 1320px) {
+        margin-left: -$gridGutterWidth * 4;
+        margin-right: -$gridGutterWidth * 4;
+    }
+    @media (min-width: 1640px) {
+        margin-left: -$gridGutterWidth * 5;
+        margin-right: -$gridGutterWidth * 5;
+    }
+}
+.e-carousel-content .carousel-caption.left {
+	left: $gridGutterWidth;
+    @media (min-width: 1240px) {
+        left: $gridGutterWidth * 3;
+    }
+    @media (min-width: 1320px) {
+        left: $gridGutterWidth * 4;
+    }
+    @media (min-width: 1640px) {
+        left: $gridGutterWidth * 5;
+    }
+}
+.e-carousel-content .carousel-caption.right {
+	right: $gridGutterWidth;
+    @media (min-width: 1240px) {
+        right: $gridGutterWidth * 3;
+    }
+    @media (min-width: 1320px) {
+        right: $gridGutterWidth * 4;
+    }
+    @media (min-width: 1640px) {
+        right: $gridGutterWidth * 5;
+    }
+}
+
+@media (max-width: 980px) {
+	.e-carousel-content .carousel-caption {
+		font-size:.75em;
+	}
+}
+@media (max-width: 767px) {
+	.e-carousel-content .carousel-caption {
+		position:static;
+		font-size:.66em;
+		width:auto;
+	}
+	.e-carousel-content .carousel-caption h1,
+	.e-carousel-content .carousel-caption h2,
+	.e-carousel-content .carousel-caption h3,
+	.e-carousel-content .carousel-caption h4{
+		display:inline;
+		font-size:$baseFontSize;
+		font-weight:$eFontWeightBold;
+	}
+	.e-carousel-content .carousel-caption p,
+	.e-carousel-content .carousel-caption .lead,
+	.e-carousel-content .carousel-caption p a,
+	.e-carousel-content .carousel-caption p .btn{
+		font-size: $baseFontSize - 1;
+	}
+	.e-carousel-content .carousel-caption p{
+		display:inline;
+	}
+	.e-carousel-content .carousel-caption h1 + p,
+	.e-carousel-content .carousel-caption h2 + p,
+	.e-carousel-content .carousel-caption h3 + p,
+	.e-carousel-content .carousel-caption h4 + p,
+	.e-carousel-content .carousel-caption p + p{
+		padding-left:0.25em;
+	}
+	.e-carousel-content .carousel-caption p a,
+	.e-carousel-content .carousel-caption p .btn{
+		background: none;
+		border: 0;
+		display: inline;
+		margin: 0;
+		padding: 0 0.25em;
+		text-shadow: none;
+		@include box-shadow(none);
+		color: inherit;
+		line-height: inherit;
+		font-size: inherit;
+		white-space: normal;
+		text-decoration: underline;
+		vertical-align: baseline;
+	}
+	.e-carousel-content .carousel-indicators {
+        margin-left: -$eResponsiveBodyPadding;
+        margin-right: -$eResponsiveBodyPadding;
+	}
+	.e-carousel-content .carousel-indicators li {
+		padding-top: $baseLineHeight / 2;
+		padding-right: $gridGutterWidth / 3;
+		padding-bottom: $baseLineHeight / 3;
+		padding-left: $gridGutterWidth / 2;
+	}
+}
+@media (max-width: 480px) {
+	.e-carousel-content .carousel-control {
+		display:block;
+	}
+	.e-carousel-content .carousel-caption {
+		font-size:.5em;
+	}
+	.e-carousel-content .carousel-indicators {
+		display:none;
+	}
+}
+
+
+
+
+
+
+
+
+
+// Espresso fullscreen gallery (using styles from blueimp-gallery.scss)
+// -------------------------
+.e-carousel-gallery{
+	width:100%;
+	background-color:$contentBackgroundColor;
+	@include border-radius($imageBorderRadius);
+	@include box-sizing(padding-box);
+}
+.e-gallery a img{width:60px;height:60px;}
+
+
+
+
+
+
+
+
+
+
+

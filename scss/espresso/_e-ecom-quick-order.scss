@@ -1,0 +1,26 @@
+.e-quick-order th{
+	white-space: nowrap;
+}
+.e-quick-order tbody img{
+    float: left;
+    clear: left;
+    width: 28%;
+}
+.e-quick-order tbody p{
+	margin-left: 30%;
+	margin-bottom: 0;
+}
+.e-quick-order tbody p strong{
+	display:block;
+}
+.e-quick-order tbody input{
+	margin-top: - (floor($baseLineHeight / 8));
+	padding-top: (floor($baseLineHeight / 8)) - 1;
+	padding-bottom: (floor($baseLineHeight / 8)) - 1;
+	margin-bottom: 0;
+}
+.e-quick-order tfoot input{
+	margin-bottom: 0;
+}
+
+

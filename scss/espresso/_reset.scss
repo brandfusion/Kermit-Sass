@@ -1,0 +1,24 @@
+//
+// Reset CSS
+// Adapted from http://github.com/necolas/normalize.css
+// --------------------------------------------------
+
+// Printing
+// -------------------------
+
+@media print {
+
+	a[href]:after {
+		content: '';
+	}
+	/*
+	a[href^="http://"]:after{
+		content: " (" attr(href) ")";
+	}
+	*/
+
+	pre,
+	blockquote {
+		border-color: $baseBorderColor;
+	}
+}

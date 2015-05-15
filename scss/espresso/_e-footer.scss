@@ -1,0 +1,52 @@
+$eFooterTextColor: 				lighten($textColorMuted, 10%);
+$eFooterHeadingColor: 			lighten($eFooterTextColor, 10%);
+$eFooterLinkColor: 				$eFooterTextColor;
+$eFooterBackground: 			$navbarInverseBackground;
+$eFooterBtnTextColor: 			lighten($eFooterTextColor, 10%);
+$eFooterBtnBackground: 			darken($eFooterBackground, 5%);
+$eFooterBtnBackgroundHighlight: darken($eFooterBackground, 10%);
+
+.e-footer {
+	font-size: $baseFontSize * 0.846;
+	line-height: $baseLineHeight * 0.846;
+	color:$eFooterTextColor;
+	padding-top:$baseLineHeight;
+	padding-bottom:$baseLineHeight;
+	border-top: 1px solid rgba(0,0,0,0.5);
+	background: $eFooterBackground;
+	@include border-radius(0 0 $baseBorderRadius $baseBorderRadius); 
+}
+.e-footer h1,
+.e-footer h2,
+.e-footer h3,
+.e-footer h4,
+.e-footer h5,
+.e-footer h6{ color: $eFooterHeadingColor; }
+.e-footer a{color:$eFooterLinkColor;text-decoration:underline;}
+.e-footer a:hover{color:$eFooterLinkColor;text-decoration:none;}
+.e-footer a.unstyled,
+.e-footer a.unstyled:hover{text-decoration:none;color:inherit;}
+.e-footer a i[class*="icon"]{text-decoration:none;color:$eFooterLinkColor;}
+.e-footer a:hover i[class*="icon"]{color:darken($eFooterLinkColor, 10%);}
+.e-footer .btn{
+	@include buttonBackground($eFooterBtnBackground, $eFooterBtnBackgroundHighlight, $eFooterBtnTextColor, 0 1px 1px rgba(255,255,255,.15));
+	font-size: ceil($baseFontSize * 0.846);
+}
+.e-footer input{
+	background:$eFooterTextColor;
+}
+.e-footer input:focus{
+	background:$inputBackground;
+}
+.e-footer hr{
+	border-top-color:$baseRuleColor;
+	border-bottom:0;
+}
+.e-footer address{
+	color:$eFooterTextColor;
+}
+@media (max-width: 767px) {
+	.e-footer {
+		@include border-radius(0); 
+	}
+}

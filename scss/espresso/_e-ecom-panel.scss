@@ -1,0 +1,101 @@
+$ePanelFocusBackground:	#ffc;
+
+.e-panel{
+	border: 1px solid $baseBorderColor;
+	@include border-radius($boxBorderRadius); 
+	margin-bottom: $baseLineHeight;	
+}
+//udlign afstand i toppen af content på e-panel hvis det ligger som først element i en container med klassen e-column der tilføjer padding og border i toppen til at lave tørresnoren
+.e-column > .row:first-child > [class*="span"]:first-child > .pidlink + .e-panel{
+	margin-top: - (floor($baseFontSize * 0.846) + 1);
+	@include border-radius(0 0 $boxBorderRadius $boxBorderRadius); 
+}
+.e-panel-padded{
+	padding: $baseLineHeight $gridGutterWidth;
+}
+.e-panel-focus{
+	border-color: rgba(0,0,0,0.05);
+	background: $ePanelFocusBackground;
+}
+.e-label{
+	color: $headingsColor;
+    font-size: ceil($baseFontSize * 0.846);
+    font-weight: $eFontWeightBold;
+	line-height: 1.2;
+	margin-bottom: 0;
+}
+.e-panel-cap{
+	min-height: $baseLineHeight / 2;
+	border-bottom: 1px solid $baseBorderColor;
+	background: $baseBackgroundColor;
+	padding: $baseLineHeight / 2 $gridGutterWidth / 2;
+	@include border-radius(0 $boxBorderRadius $boxBorderRadius 0);
+}
+.e-panel-cap h1,
+.e-panel-cap h2,
+.e-panel-cap h3,
+.e-panel-cap h4,
+.e-panel-cap p,
+.e-panel-cap form {
+	margin: 0;
+	padding: 0;
+}
+
+.e-panel-cap form {
+	height: $baseLineHeight;
+}
+.e-panel-cap form .control-group {
+	margin: 0;
+}
+.e-panel-cap form .pull-left .e-label,
+.e-panel-cap form .control-group label{
+	width: auto;
+	float: left;
+	line-height: $baseLineHeight;
+}
+.e-panel-cap form .control-group .controls{
+	width: auto;
+	float: left;
+	margin: 0;
+}
+.e-panel-cap form .control-group .controls select{
+	font-size: ceil($baseFontSize * 0.846);
+	height: floor($inputHeight * 0.846);
+	line-height: floor($inputHeight * 0.846);
+	margin-top: - $baseLineHeight / 4;
+	margin-left: $gridGutterWidth / 2;
+}
+
+.e-panel-cap.e-filter-cap{
+	text-align: center;
+	font-size: $baseFontSize * 1.154;
+	color: $white;
+	background: $brandColor;
+	position: relative;
+	border: 1px solid darken($brandColor,10%);
+	margin: -1px;
+	@include border-radius($boxBorderRadius $boxBorderRadius 0 0); 
+  &:before {
+    content: '';
+    display: inline-block;
+    border-left: ceil($baseLineHeight / 2) + 2 solid transparent;
+    border-right: ceil($baseLineHeight / 2) + 2 solid transparent;
+    border-top: ceil($baseLineHeight / 2) + 2 solid darken($brandColor,10%);
+    border-top-color: darken($brandColor,10%);
+    position: absolute;
+    bottom: - ceil($baseLineHeight / 2 + 2)  ;
+	left:50%;
+	margin-left: - ceil($baseLineHeight / 4 + 2);
+  }
+  &:after {
+    content: '';
+    display: inline-block;
+    border-left: ceil($baseLineHeight / 2) solid transparent;
+    border-right: ceil($baseLineHeight / 2) solid transparent;
+    border-top: ceil($baseLineHeight / 2) solid $brandColor;
+    position: absolute;
+    bottom: - ceil($baseLineHeight / 2);
+	left: 50%;
+	margin-left: - ceil($baseLineHeight / 4);
+  }
+}

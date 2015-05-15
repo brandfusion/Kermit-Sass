@@ -1,0 +1,19 @@
+.accordion-group {
+	border-color: $baseBorderColor;
+}
+.accordion-inner {
+	border-top-color: $baseBorderColor;
+}
+.accordion-toggle{
+	font-weight: $eFontWeightBold;;
+}
+.accordion-toggle .icon-plus-sign,
+.accordion-toggle .icon-minus-sign{
+	display: none;
+	float: right;
+	line-height: $baseLineHeight;
+}
+.accordion-toggle.collapsed .icon-plus-sign,
+.accordion-toggle:not(.collapsed) .icon-minus-sign{
+	display: inline;
+}

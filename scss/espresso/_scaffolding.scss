@@ -1,0 +1,22 @@
+body { background:$bodyBackground;overflow-x:hidden;}
+
+.e-content .row,
+.e-content .row-fluid{ margin-bottom: $baseLineHeight; }
+
+.e-top .row,
+.e-bottom .row,
+.e-top .row-fluid,
+.e-bottom .row-fluid{ margin-bottom: $baseLineHeight / 2; }
+.e-top > .row:last-child{ margin-bottom:0; }
+
+#e-grid { 
+	display:none; 
+	position:absolute; 
+	top:0; 
+	bottom:0; 
+	z-index:$zindexFixedNavbar - 1; 
+}
+#e-grid [class*="span"] { 
+	background:rgba($brandColor,.10);
+	height:100%; 
+}

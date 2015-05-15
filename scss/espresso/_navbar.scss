@@ -1,0 +1,69 @@
+//
+// Navbars (Redux)
+// --------------------------------------------------
+
+
+// COMMON STYLES
+// -------------
+
+// Base class and wrapper
+.navbar { margin-bottom:0;}
+// Inner for background effects
+// Gradient is applied to its own element because overflow visible is not honored by IE when filter is present
+.navbar-inner {
+	margin-left:$gridGutterWidth * -1;
+	margin-right:$gridGutterWidth * -1;
+	padding-left:$gridGutterWidth;
+	padding-right:$gridGutterWidth;
+	background: $navbarBackground;
+	border: 0;
+	@include border-radius(0);
+	@include box-shadow(#{none});
+}
+.navbar .nav > li:first-child{
+	margin-left:- $gridGutterWidth / 1.5;
+}
+.navbar .nav > li > a {
+	padding-left:$gridGutterWidth / 1.5;
+	padding-right:$gridGutterWidth / 1.5;
+}
+.navbar .nav > .active > a,
+.navbar .nav > .active > a:hover, 
+.navbar .nav > .active > a:focus {
+	@include box-shadow(#{none});
+}
+// Navbar search
+// -------------------------
+.navbar-search {
+	.search-query {
+		line-height: $baseLineHeight;
+	}
+}
+
+
+
+
+@media (min-width: 1240px) {
+	.navbar .navbar-inner { 
+		margin-left:-$gridGutterWidth * 3;
+		margin-right:-$gridGutterWidth * 3;
+		padding-left:$gridGutterWidth * 3;
+		padding-right:$gridGutterWidth * 3;
+	}
+}
+@media (min-width: 1320px) {
+	.navbar .navbar-inner {
+		margin-left:-$gridGutterWidth * 4;
+		margin-right:-$gridGutterWidth * 4;
+		padding-left:$gridGutterWidth * 4;
+		padding-right:$gridGutterWidth * 4;
+	}
+}
+@media (min-width: 1640px) {
+	.navbar .navbar-inner { 
+		margin-left:-$gridGutterWidth * 5;
+		margin-right:-$gridGutterWidth * 5;
+		padding-left:$gridGutterWidth * 5;
+		padding-right:$gridGutterWidth * 5;
+	}
+}

@@ -1,0 +1,49 @@
+//
+// Alerts
+// --------------------------------------------------
+.alert a {
+    text-decoration: underline;
+}
+
+.alert a {
+  color: darken($warningText, 10%);
+  &:hover {
+    color: darken($warningText, 25%);
+  }
+}
+
+.alert-success a {
+  color: darken($successText, 10%);
+  &:hover {
+    color: darken($successText, 25%);
+  }
+}
+.alert-danger,
+.alert-error a {
+  color: darken($errorText, 10%);
+  &:hover {
+    color: darken($errorText, 25%);
+  }
+}
+.alert-info a {
+  color: darken($infoText, 10%);
+  &:hover {
+    color: darken($infoText, 25%);
+  }
+}
+
+
+// Alternate styles
+// -------------------------
+
+.alert-branded {
+	background-color: $brandedBackground;
+	border-color: $brandedBorder;
+	color: $brandedText;
+}
+.alert-branded a {
+  color: darken($brandedText, 10%);
+  &:hover {
+    color: darken($brandedText, 25%);
+  }
+}

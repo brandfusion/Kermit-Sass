@@ -1,0 +1,50 @@
+// Espresso modal extension for small devices 
+.e-modal-fixed{
+	display: block;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: $zindexModal;
+	max-width: 100%;
+	overflow-x: hidden;
+	overflow-y: auto;
+	margin: 0;
+	border: 0;
+	background: $contentBackgroundColor;
+}
+//apply to body when modal is shown to avoid double scroll
+.e-modal-fixed-backdrop{ overflow: hidden; }
+
+
+// Base modal
+.modal {
+  @include border-radius($boxBorderRadius);
+}
+.modal-header {
+	padding: $baseLineHeight / 3 $gridGutterWidth;
+	border-bottom-color:$baseBorderColor;
+	background-color: $baseBackgroundColor;
+	@include border-radius($boxBorderRadius $boxBorderRadius 0 0);
+}
+.modal-header h1,
+.modal-header h2,
+.modal-header h3,
+.modal-header h4,
+.modal-header h5,
+.modal-header h6{margin:0;}
+
+// Body (where all modal content resides)
+.modal-body {
+	padding: $baseLineHeight / 2 $gridGutterWidth;
+}
+.modal-body hr{
+	margin: $baseLineHeight / 4 0;
+}
+// Footer (for actions)
+.modal-footer {
+	background-color: $baseBackgroundColor;
+	border-top-color:$baseBorderColor;
+	@include border-radius(0 0 $boxBorderRadius $boxBorderRadius);
+}

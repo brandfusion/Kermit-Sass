@@ -1,0 +1,112 @@
+@mixin background-section($sectionName, $backgroundColor: $baseBackgroundColor, $hrColor: $baseRuleColor, $textColor: $textColor, $headingsColor: $headingsColor, $linkColor: $linkColor) {
+	.section-#{$sectionName}{
+		padding-top: $baseLineHeight * 1.5;
+		@if $backgroundColor != transparent {
+			@include gradient-vertical($backgroundColor, darken($backgroundColor,3%));
+		} @else {
+			background-color: transparent;
+		}		
+	}
+	.section-#{$sectionName} + .e-content{
+		padding-top: $baseLineHeight * 2;
+	} 
+	.section-#{$sectionName} hr{
+		border-top-color: $hrColor;
+		border-bottom: 0;
+	}
+	.section-#{$sectionName} p{
+		color: $textColor;
+	}
+	.section-#{$sectionName} p a:not(.btn){
+		color: $linkColor;
+	}
+	.section-#{$sectionName} h1,
+	.section-#{$sectionName} h2,
+	.section-#{$sectionName} h3,
+	.section-#{$sectionName} h4{
+		color: $headingsColor;
+	}
+	.section-#{$sectionName} > .row{margin-bottom:0;}
+	.section-#{$sectionName} > .row > .featured > .row{margin-bottom:0;}
+	/* .section-#{$sectionName} > .row > .featured > .row:last-child{display:none;} */
+}
+@mixin images-bleed($columnsContent, $columnsBleed) {
+	.container[class*="e-"] > .row > .span#{$columnsContent} > .row > .span#{$columnsContent} img.large { 
+		@media (min-width: 768px){
+			max-width:none;
+		}
+		@media (min-width: 768px) and (max-width: 979px){
+			width: $gridColumnWidth768 * $columnsBleed + $gridGutterWidth768 * ($columnsBleed - 1);
+			margin-left: - ($gridColumnWidth768 * ($columnsBleed - $columnsContent) / 2 + $gridGutterWidth768 * ($columnsBleed - $columnsContent) / 2);
+			margin-right: - ($gridColumnWidth768 * ($columnsBleed - $columnsContent) / 2 + $gridGutterWidth768 * ($columnsBleed - $columnsContent) / 2);
+		}
+		@media (min-width: 980px){
+			width: $gridColumnWidth * $columnsBleed + $gridGutterWidth * ($columnsBleed - 1);
+			margin-left: - ($gridColumnWidth * ($columnsBleed - $columnsContent) / 2 + $gridGutterWidth * ($columnsBleed - $columnsContent) / 2);
+			margin-right: - ($gridColumnWidth * ($columnsBleed - $columnsContent) / 2 + $gridGutterWidth * ($columnsBleed - $columnsContent) / 2);
+		}
+	}
+	.container[class*="e-"] > .row > .span#{$columnsContent} > .row > .span#{$columnsContent} p.caption.large {
+		@media (min-width: 768px) and (max-width: 979px){
+			margin-left: - ($gridColumnWidth768 * ($columnsBleed - $columnsContent) / 2 + $gridGutterWidth768 * ($columnsBleed - $columnsContent) / 2);
+			margin-right: - ($gridColumnWidth768 * ($columnsBleed - $columnsContent) / 2 + $gridGutterWidth768 * ($columnsBleed - $columnsContent) / 2);
+		}
+		@media (min-width: 980px){
+			margin-left: - ($gridColumnWidth * ($columnsBleed - $columnsContent) / 2 + $gridGutterWidth * ($columnsBleed - $columnsContent) / 2);
+			margin-right: - ($gridColumnWidth * ($columnsBleed - $columnsContent) / 2 + $gridGutterWidth * ($columnsBleed - $columnsContent) / 2);
+		}
+	}  
+}
+
+@mixin images-bleed-full($columnsContent, $columnsBleed) {
+	.container[class*="e-"] > .row > .span#{$columnsContent} > .row > .span#{$columnsContent} img.mega {
+		@include border-radius(0);
+		@media (min-width: 768px){
+			max-width:none;
+		}
+		@media (min-width: 768px) and (max-width: 979px){
+			width: $gridColumnWidth768 * $columnsBleed + $gridGutterWidth768 * ($columnsBleed + 1);
+			margin-left: - ($gridColumnWidth768 * ($columnsBleed - $columnsContent) / 2 + $gridGutterWidth768 * ($columnsBleed - $columnsContent) / 2 + $gridGutterWidth768 * 1);
+			margin-right: - ($gridColumnWidth768 * ($columnsBleed - $columnsContent) / 2 + $gridGutterWidth768 * ($columnsBleed - $columnsContent) / 2 + $gridGutterWidth768 * 1);
+		}
+		@media (min-width: 980px){
+			width: $gridColumnWidth * $columnsBleed + $gridGutterWidth * ($columnsBleed + 1);
+			margin-left: - ($gridColumnWidth * ($columnsBleed - $columnsContent) / 2 + $gridGutterWidth * ($columnsBleed - $columnsContent) / 2 + $gridGutterWidth * 1);
+			margin-right: - ($gridColumnWidth * ($columnsBleed - $columnsContent) / 2 + $gridGutterWidth * ($columnsBleed - $columnsContent) / 2 + $gridGutterWidth * 1);
+		}
+		@media (min-width: 1240px) {
+			width: $gridColumnWidth * $columnsBleed + $gridGutterWidth * ($columnsBleed + 5);
+			margin-left: - ($gridColumnWidth * ($columnsBleed - $columnsContent) / 2 + $gridGutterWidth * ($columnsBleed - $columnsContent) / 2 + $gridGutterWidth * 3);
+			margin-right: - ($gridColumnWidth * ($columnsBleed - $columnsContent) / 2 + $gridGutterWidth * ($columnsBleed - $columnsContent) / 2 + $gridGutterWidth * 3);
+		}
+		@media (min-width: 1320px) {
+			width: $gridColumnWidth * $columnsBleed + $gridGutterWidth * ($columnsBleed + 7);
+			margin-left: - ($gridColumnWidth * ($columnsBleed - $columnsContent) / 2 + $gridGutterWidth * ($columnsBleed - $columnsContent) / 2 + $gridGutterWidth * 4);
+			margin-right: - ($gridColumnWidth * ($columnsBleed - $columnsContent) / 2 + $gridGutterWidth * ($columnsBleed - $columnsContent) / 2 + $gridGutterWidth * 4);
+		}
+		@media (min-width: 1640px) {
+			width: $gridColumnWidth * $columnsBleed + $gridGutterWidth * ($columnsBleed + 9);
+			margin-left: - ($gridColumnWidth * ($columnsBleed - $columnsContent) / 2 + $gridGutterWidth * ($columnsBleed - $columnsContent) / 2 + $gridGutterWidth * 5);
+			margin-right: - ($gridColumnWidth * ($columnsBleed - $columnsContent) / 2 + $gridGutterWidth * ($columnsBleed - $columnsContent) / 2 + $gridGutterWidth * 5);
+		}
+	}
+	.container[class*="e-"] > .row > .span#{$columnsContent} > .row > .span#{$columnsContent} p.caption.mega {
+		padding-left: $gridGutterWidth;
+		@media (min-width: 980px){
+			margin-left: - ($gridColumnWidth * ($columnsBleed - $columnsContent) / 2 + $gridGutterWidth * 3);
+			margin-right: - ($gridColumnWidth * ($columnsBleed - $columnsContent) / 2 + $gridGutterWidth * 3);
+		}
+		@media (min-width: 1240px) {
+			margin-left: - ($gridColumnWidth * ($columnsBleed - $columnsContent) / 2 + $gridGutterWidth * 5);
+			margin-right: - ($gridColumnWidth * ($columnsBleed - $columnsContent) / 2 + $gridGutterWidth * 5);
+		}
+		@media (min-width: 1320px) {
+			margin-left: - ($gridColumnWidth * ($columnsBleed - $columnsContent) / 2 + $gridGutterWidth * 6);
+			margin-right: - ($gridColumnWidth * ($columnsBleed - $columnsContent) / 2 + $gridGutterWidth * 6);
+		}
+		@media (min-width: 1640px) {
+			margin-left: - ($gridColumnWidth * ($columnsBleed - $columnsContent) / 2 + $gridGutterWidth * 7);
+			margin-right: - ($gridColumnWidth * ($columnsBleed - $columnsContent) / 2 + $gridGutterWidth * 7);
+		}
+	}
+}

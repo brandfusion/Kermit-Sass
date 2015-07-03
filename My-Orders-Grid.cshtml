@@ -1,0 +1,96 @@
+<div class="col-sm-12">
+	<p class="alert-text pull-right">
+	    <i class="fa fa-info-circle fa-lg"></i>
+	    Further filtering and sorting options are available by clicking
+	    <i class="fa fa-filter"></i> in the column headings below.
+	</p>
+</div>
+
+<div class="col-sm-12">
+	<div id="orders-grid" class=" all-ecom-tables my-orders-grid"></div>
+</div>
+
+
+<script id="rowTemplate" type="text/x-kendo-template">
+	<tr data-uid="#=uid#">
+		<td class="orders-view-product">
+			#if(IsInEditMode){#
+				<a href="/edit-order?orderid=#=OrderNum#" class="view-product">Edit</a>
+			#} else {#
+				<a href="/view-order?orderid=#=OrderNum#" class="view-product">View</a>
+			#}#
+		</td>
+		<td>
+			<i class='fa #=StatusIcon.Class# fa-lg'></i>
+	    </td>
+		<td>#=RequestedWeekString#</td>
+		<td class="order-week">#=Week#</td>
+		<td>#=CustPONum#</td>
+		<td class="order-number">#=OrderNum#</td>
+		<td class="orders-vendor">#=Vendor#</td>
+		<td>#=ShipToCity#</td>
+		<td>#=Qty#</td>
+		<td class="numeric-data">#=kendo.format("{0:C}", Value)#</td>
+		<td class="shipment-method">
+			<div class="shipment-wrap">
+			#if(ShipMethodsForView != null){# 
+				<span class="trigger">Shipping details</span>
+				<div class="shipment-container">
+					<div class="shipment-item">
+					  <p class="ship-method"><i class="fa fa-truck"></i>Shipping Method: <span>#=ShipMethodsForView.ShippingMethod#</span></p>
+					  <p class="ship-status"><i class="fa fa-eye"></i>Shipping Status: <span>#=ShipMethodsForView.ShippingStatusd#</span></p>
+					  <p class="ship-tracking"><i class="fa fa-map-marker"></i>Tracking Code: <span>#=ShipMethodsForView.TrackingCode#</span></p>
+					</div>
+				</div>
+			#} else {#
+				<span class="trigger">Call for details</span>
+				<div class="shipment-container">
+				#for(var i = 0; i<RepresentativeData.length; i++){#	
+					<div class="shipment-item">
+					  <p class="name"><i class="fa fa-user"></i>Name: <span>#=RepresentativeData[i].RepresentativeName#</span></p>
+					  <p class="phone"><i class="fa fa-phone"></i>Phone: <span>#=RepresentativeData[i].RepresentativePhoneNumber#</span></p>
+					</div>
+				#}#
+				</div>
+			#}#
+			</div>
+		</td>
+	</tr>
+</script>
+
+<script type="text/x-kendo-template" id="shipping-template">
+	<li>
+		<label><input type="checkbox" value="#=value#" #if(checked){#checked="true"#}# />
+		# switch ( value ) {
+		    case "fedex": #
+		       	<img src="files/templates/designs/espresso/assets/img/fedex.png"> FedEx
+		    # break; #
+		    # case "usps": #
+		       	<img src="files/templates/designs/espresso/assets/img/usps.png"> USPS
+		    # break; #
+		    # default: #
+		    	<span>Call for Details</span>
+		    # }#
+		</label>
+	</li>
+</script>
+
+<script type="text/x-kendo-template" id="status-template">
+	<li>
+		<label><input type="checkbox" value="#=value.Label#" #if(checked){#checked="checked"#}#/>
+			<i class='fa #=value.Class# fa-lg'></i> #=value.Label# #=checked#
+		</label>
+	</li>
+</script>
+
+
+<!--@SnippetStart(bottomJS)-->
+<script src="/Files/Templates/Designs/espresso-dev/assets/js/kendo.grid.filtermenuframe.js"></script>
+<script src="/Files/Templates/Designs/espresso-dev/assets/js/kendo.grid.selectvaluefilter.js"></script>
+
+<script src="/Files/Templates/Designs/espresso-dev/assets/js/orders/ordersGridController.js"></script>
+<script src="/Files/Templates/Designs/espresso-dev/assets/js/orders/ordersFetcher.js"></script>
+<script src="/Files/Templates/Designs/espresso-dev/assets/js/orders/ordersViewController.js"></script>
+
+
+<!--@SnippetEnd(bottomJS)-->
